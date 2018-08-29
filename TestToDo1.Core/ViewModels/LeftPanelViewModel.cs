@@ -92,7 +92,6 @@ namespace TestToDo1.Core.ViewModels
         }
         public void AddPictureFromCamera()
         {
-            //for camera first
             _pictureChooserTask.TakePicture(_maxPixel, _qualityPercent, OnPicture, () => { });
         }
 
