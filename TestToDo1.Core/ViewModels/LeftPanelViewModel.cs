@@ -101,6 +101,7 @@ namespace TestToDo1.Core.ViewModels
             var memoryStream = new MemoryStream();
             stream.CopyTo(memoryStream);
             UserImage = memoryStream.ToArray();
+            SignViewModel.UserTemp.UserImage = UserImage;
         }
     }
 }

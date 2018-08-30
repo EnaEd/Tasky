@@ -5,6 +5,8 @@ using MvvmCross.Binding.BindingContext;
 using TestToDo1.Core.ViewModels;
 using MvvmCross.iOS.Support.SidePanels;
 using Cirrious.FluentLayouts.Touch;
+using System.Drawing;
+using System.Linq;
 
 namespace TestToDo1.iOS.Views
 {
@@ -12,7 +14,6 @@ namespace TestToDo1.iOS.Views
     [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ResetRoot, true)]
     public class RegistrationView : MvxViewController<RegistrationViewModel>
     {
-        private UIToolbar _uIToolbar;
         private UIButton _buttonCreate;
         private UITextField _textUserName;
         private UITextField _textUserPassword;
@@ -20,6 +21,8 @@ namespace TestToDo1.iOS.Views
         private UIImageView _imageUserPhoto;
         private UIButton _buttonPhoto;
         private UILabel _labelError;
+        private UIScrollView _scrollView;
+        private UIView _contentConteiner;
 
         public RegistrationView()
         {
@@ -29,6 +32,16 @@ namespace TestToDo1.iOS.Views
             base.ViewDidLoad();
             View.BackgroundColor = UIColor.White;
 
+            _contentConteiner = new UIView();
+            _scrollView = new UIScrollView();
+            _scrollView.AddSubview(_contentConteiner);
+            Add(_scrollView);
+
+
+            _scrollView.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+            _scrollView.AddConstraints(_contentConteiner.FullWidthOf(_scrollView));
+            _scrollView.AddConstraints(_contentConteiner.FullHeightOf(_scrollView));
+
             var _BackBarButton = new UIBarButtonItem();
             _BackBarButton.Title = "";
             NavigationItem.RightBarButtonItem = _BackBarButton;
@@ -36,51 +49,59 @@ namespace TestToDo1.iOS.Views
             _BackBarButton.Title = "";
             NavigationItem.LeftBarButtonItem = _BackBarButton;
 
-            _uIToolbar = new UIToolbar();
-            _uIToolbar.BackgroundColor = UIColor.LightGray;
-            Add(_uIToolbar);
 
             _labelError = new UILabel();
             _labelError.TextColor = UIColor.Red;
-            Add(_labelError);
+            _contentConteiner.AddSubview(_labelError);
 
             _textUserName = new UITextField();
             _textUserName.Placeholder = "Login";
             _textUserName.Layer.CornerRadius = 5;
-            Add(_textUserName);
+            _textUserName.ShouldReturn = (textField) => {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            _contentConteiner.AddSubview(_textUserName);
 
             _textUserPassword = new UITextField();
             _textUserPassword.Placeholder = "Password";
             _textUserPassword.Layer.CornerRadius = 5;
             _textUserPassword.SecureTextEntry = true;
-            Add(_textUserPassword);
+            _textUserPassword.ShouldReturn = (textField) => {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            _contentConteiner.AddSubview(_textUserPassword);
 
             _textUserPasswordRepeat = new UITextField();
             _textUserPasswordRepeat.Placeholder = "Password repeat";
             _textUserPasswordRepeat.Layer.CornerRadius = 5;
             _textUserPasswordRepeat.SecureTextEntry = true;
-            Add(_textUserPasswordRepeat);
+            _textUserPasswordRepeat.ShouldReturn = (textField) => {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            _contentConteiner.AddSubview(_textUserPasswordRepeat);
 
             _imageUserPhoto = new UIImageView();
             _imageUserPhoto.Layer.CornerRadius = this._imageUserPhoto.Frame.Size.Height / 2;
             _imageUserPhoto.ClipsToBounds = true;
             _imageUserPhoto.BackgroundColor = UIColor.LightGray;
-            Add(_imageUserPhoto);
+            _contentConteiner.AddSubview(_imageUserPhoto);
 
             _buttonPhoto = new UIButton();
             _buttonPhoto.Layer.CornerRadius = this._buttonPhoto.Frame.Size.Height / 2;
             _buttonPhoto.ClipsToBounds = true;
             _buttonPhoto.BackgroundColor = UIColor.Clear;
             _buttonPhoto.TouchUpInside += ChoosePicture;
-            
-            Add(_buttonPhoto);
+            _contentConteiner.AddSubview(_buttonPhoto);
 
             _buttonCreate = new UIButton(UIButtonType.RoundedRect);
             _buttonCreate.SetTitle("Create", UIControlState.Normal);
             _buttonCreate.Layer.CornerRadius = 5;
             _buttonCreate.BackgroundColor = UIColor.Blue;
             _buttonCreate.SetTitleColor(UIColor.White, UIControlState.Normal);
-            Add(_buttonCreate);
+            _contentConteiner.AddSubview(_buttonCreate);
 
             var set = this.CreateBindingSet<RegistrationView, RegistrationViewModel>();
             set.Bind(_textUserName).To(vm => vm.UserLogin);
@@ -94,28 +115,35 @@ namespace TestToDo1.iOS.Views
             //conastraint
             View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
+            View.AddConstraints(_scrollView.FullWidthOf(View));
+            View.AddConstraints(_scrollView.FullHeightOf(View));
             View.AddConstraints(
-                _uIToolbar.WithSameCenterX(View),
-                _uIToolbar.WithSameTop(View).Plus(60),
-                _uIToolbar.Width().EqualTo(View.Frame.Width).Minus(0),
+                _contentConteiner.WithSameWidth(View),
+                _contentConteiner.WithSameHeight(View).SetPriority(UILayoutPriority.DefaultLow)
+            );
 
-                _labelError.WithSameCenterX(View).Plus(20),
-                _labelError.Width().EqualTo(View.Frame.Width).Minus(100),
-                _labelError.Below(_uIToolbar, -30),
+            _contentConteiner.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
-                _textUserName.WithSameCenterX(View).Minus(60),
-                _textUserName.Width().EqualTo(View.Frame.Width).Minus(130),
-                _textUserName.Below(_uIToolbar,60),
+            _contentConteiner.AddConstraints(
 
-                _textUserPassword.WithSameCenterX(View).Minus(60),
-                _textUserPassword.Width().EqualTo(View.Frame.Width).Minus(130),
+                _labelError.WithSameCenterX(_contentConteiner),
+                _labelError.WithSameWidth(_contentConteiner).Minus(100),
+                _labelError.AtTopOf(_contentConteiner),
+                _labelError.Height().EqualTo(13),
+
+                _textUserName.AtLeftOf(_contentConteiner,25),
+                _textUserName.WithSameWidth(_contentConteiner).Minus(100),
+                _textUserName.Below(_labelError,60),
+
+                _textUserPassword.AtLeftOf(_contentConteiner, 25),
+                _textUserPassword.WithSameWidth(_contentConteiner).Minus(130),
                 _textUserPassword.Below(_textUserName, 40),
 
-                 _textUserPasswordRepeat.WithSameCenterX(View).Minus(60),
-                _textUserPasswordRepeat.Width().EqualTo(View.Frame.Width).Minus(130),
+                 _textUserPasswordRepeat.AtLeftOf(_contentConteiner, 25),
+                _textUserPasswordRepeat.WithSameWidth(_contentConteiner).Minus(130),
                 _textUserPasswordRepeat.Below(_textUserPassword, 40),
 
-                _imageUserPhoto.AtRightOf(_textUserName,-100),
+                _imageUserPhoto.AtRightOf(_contentConteiner,25),
                 _imageUserPhoto.WithSameCenterY(_textUserName),
                 _imageUserPhoto.Width().EqualTo(80),
                 _imageUserPhoto.Height().EqualTo(80),
@@ -125,10 +153,16 @@ namespace TestToDo1.iOS.Views
                 _buttonPhoto.Height().EqualTo(80),
                 _buttonPhoto.Below(_imageUserPhoto,-80),
 
-                _buttonCreate.WithSameCenterX(View),
-                _buttonCreate.Width().EqualTo(View.Frame.Width).Minus(120),
+                _buttonCreate.WithSameCenterX(_contentConteiner),
+                _buttonCreate.WithSameWidth(_contentConteiner).Minus(130),
                 _buttonCreate.Below(_textUserPasswordRepeat, 60)
                 );
+
+            // very important to make scrolling work
+            var bottomViewConstraint = _contentConteiner.Subviews.Last()
+               .AtBottomOf(_contentConteiner).Minus(20);
+            _contentConteiner.AddConstraints(bottomViewConstraint);
+
             //disable swipe
             CreateGestureRecognizer();
         }

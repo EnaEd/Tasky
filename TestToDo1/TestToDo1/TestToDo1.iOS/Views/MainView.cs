@@ -24,7 +24,7 @@ namespace TestToDo1.iOS.Views
         }
         public override void ViewDidLoad()
         {
-            View = new UIView() { BackgroundColor=UIColor.LightGray};
+            View = new UIView() { BackgroundColor=UIColor.White};
 
             base.ViewDidLoad();
 

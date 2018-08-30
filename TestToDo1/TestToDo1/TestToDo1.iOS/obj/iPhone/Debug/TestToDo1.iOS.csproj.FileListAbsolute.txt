@@ -24,7 +24,6 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.i
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhone\Debug\TestToDo1.Core.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhone\Debug\Xamarin-Sidebar-Unified.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhone\Debug\TestToDo1.Core.pdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhone\Debug\TestToDo1.Core.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhone\Debug\MvvmCross.Binding.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhone\Debug\MvvmCross.Binding.iOS.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhone\Debug\MvvmCross.iOS.dll.mdb
@@ -52,3 +51,4 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.i
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\TestToDo1.iOS.csproj.CopyComplete
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\TestToDo1.iOS.exe
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\TestToDo1.iOS.pdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhone\Debug\TestToDo1.Core.dll.mdb

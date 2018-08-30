@@ -31,5 +31,6 @@ namespace TestToDo1.Core.ViewModels
         {
             ShowViewModel<RegistrationViewModel>();
         }
+       
     }     
 }

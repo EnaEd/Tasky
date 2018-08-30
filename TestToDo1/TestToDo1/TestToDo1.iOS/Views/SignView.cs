@@ -12,7 +12,6 @@ namespace TestToDo1.iOS.Views
     [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ActivePanel, true)]
     public class SignView : MvxViewController
     {
-        private UIToolbar _uIToolbar;
         private UIButton _buttonSignIn;
         private UITextField _textUserLogin;
         private UITextField _textUserPassword;
@@ -33,21 +32,25 @@ namespace TestToDo1.iOS.Views
             _BackBarButton.Title = "";
             NavigationItem.LeftBarButtonItem = _BackBarButton;
 
-            _uIToolbar = new UIToolbar();
-            _uIToolbar.BackgroundColor = UIColor.LightGray;
-            Add(_uIToolbar);
-
             _labelError = new UILabel();
             _labelError.TextColor = UIColor.Red;
             Add(_labelError);
 
             _textUserLogin = new UITextField();
             _textUserLogin.Placeholder = "Login";
+            _textUserLogin.ShouldReturn = (textField) => {
+                textField.ResignFirstResponder();
+                return true;
+            };
             Add(_textUserLogin);
 
             _textUserPassword = new UITextField();
             _textUserPassword.Placeholder = "Password";
             _textUserPassword.SecureTextEntry = true;
+            _textUserPassword.ShouldReturn = (textField) => {
+                textField.ResignFirstResponder();
+                return true;
+            };
             Add(_textUserPassword);
 
             _buttonSignIn = new UIButton(UIButtonType.RoundedRect);
@@ -68,27 +71,19 @@ namespace TestToDo1.iOS.Views
             //conastraint
             View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
-            View.AddConstraints(
-                _uIToolbar.WithSameCenterX(View),
-                _uIToolbar.WithSameTop(View).Plus(60),
-                _uIToolbar.Width().EqualTo(View.Frame.Width).Minus(0),
+            View.AddConstraints(_labelError.FullWidthOf(View, 25));
+            View.AddConstraints(_labelError.AtTopOf(View, 61));
+            View.AddConstraints(_labelError.Height().EqualTo(20));
 
-                _labelError.WithSameCenterX(View).Plus(20),
-                _labelError.Width().EqualTo(View.Frame.Width).Minus(100),
-                _labelError.Below(_uIToolbar, -30),
+            View.AddConstraints(_textUserLogin.FullWidthOf(View, 25));
+            View.AddConstraints(_textUserLogin.Below(_labelError, 40));
 
-                _textUserLogin.WithSameCenterX(View),
-                _textUserLogin.Width().EqualTo(View.Frame.Width).Minus(120),
-                _textUserLogin.Below(_uIToolbar,60),
+            View.AddConstraints(_textUserPassword.FullWidthOf(View, 25));
+            View.AddConstraints(_textUserPassword.Below(_textUserLogin, 60));
 
-                _textUserPassword.WithSameCenterX(View),
-                _textUserPassword.Width().EqualTo(View.Frame.Width).Minus(120),
-                _textUserPassword.Below(_textUserLogin, 60),
+            View.AddConstraints(_buttonSignIn.FullWidthOf(View, 25));
+            View.AddConstraints(_buttonSignIn.Below(_textUserPassword, 60));
 
-                _buttonSignIn.WithSameCenterX(View),
-                _buttonSignIn.Width().EqualTo(View.Frame.Width).Minus(120),
-                _buttonSignIn.Below(_textUserPassword, 60)
-                );
             //disable swipe
             CreateGestureRecognizer();
         }

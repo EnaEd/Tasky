@@ -231,7 +231,8 @@ namespace TestToDo1.Core.ViewModels
             {
                 ContactPhone = "";
             }
-                _phoneCallTask.MakePhoneCall("", ContactPhone); 
+            
+            _phoneCallTask.MakePhoneCall("",ContactPhone); 
         }
 
         private MvxCommand _addPicture;

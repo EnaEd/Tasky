@@ -9,6 +9,7 @@ namespace TestToDo1.Core.ViewModels
 {
     public class SignViewModel : MvxViewModel
     {
+        private readonly IUserRepository _userRepository;
         private List<User> _users;
         public List<User> Users
         {
@@ -58,9 +59,10 @@ namespace TestToDo1.Core.ViewModels
             }
         }
 
-        public SignViewModel()
+        public SignViewModel(IUserRepository userRepository)
         {
             Error = string.Empty;
+            _userRepository = userRepository;
         }
 
         private MvxCommand _signCommand;
@@ -78,9 +80,9 @@ namespace TestToDo1.Core.ViewModels
                 UserTemp = new User();
                 UserTemp.UserLogin = this.UserLogin;
                 UserTemp.UserPassword = this.UserPassword;
-                if (Mvx.Resolve<IUserRepository>().GetUserByData(UserLogin)is User)
+                if (_userRepository.GetUserByData(UserLogin)is User)
                 {
-                    UserTemp = Mvx.Resolve<IUserRepository>().GetUserByData(UserLogin);
+                    UserTemp = _userRepository.GetUserByData(UserLogin);
 
                     if (!UserPassword.Equals(UserTemp.UserPassword))
                     {
