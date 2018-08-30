@@ -24,7 +24,6 @@ namespace TestToDo1.iOS.Views
         private UITextField _textContactName;
         private UITextField _textContactPhone;
         private UISwitch _swith;
-        private UILabel _labelPeopleContact;
         private UIButton _buttonSelectContact;
         private ABPeoplePickerNavigationController _peopleConroller;
         private UIScrollView _scrollView;

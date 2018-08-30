@@ -75,11 +75,15 @@ namespace TestToDo1.Core.ViewModels
         }
         private void DoSign()
         {
-            if (!string.IsNullOrEmpty(UserLogin) && !string.IsNullOrEmpty(UserPassword))
+            if (!string.IsNullOrEmpty(UserLogin) || !string.IsNullOrEmpty(UserPassword))
             {
+                Error = "Fields Login and Password must have a value";
+                return;
+            }
                 UserTemp = new User();
                 UserTemp.UserLogin = this.UserLogin;
                 UserTemp.UserPassword = this.UserPassword;
+
                 if (_userRepository.GetUserByData(UserLogin)is User)
                 {
                     UserTemp = _userRepository.GetUserByData(UserLogin);
@@ -93,11 +97,8 @@ namespace TestToDo1.Core.ViewModels
                     ShowViewModel<MainViewModel>();
                     return;
                 }
-
                     Error = "UserLogin not exists";
                     UserPassword = string.Empty;
-            }
-            Error = "Fields Login and Password must have a value";
         }
 
         private MvxCommand _backToCommand;
