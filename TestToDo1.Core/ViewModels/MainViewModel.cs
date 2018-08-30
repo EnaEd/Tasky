@@ -174,9 +174,8 @@ namespace TestToDo1.Core.ViewModels
             get => _removeCommand ?? (_removeCommand = new MvxCommand<int>(i =>
             {
                 //try in iPhone....
-                //TempListItemsSQL.RemoveAt(i);
                 _itemRepository.Delete(TempListItemsSQL[i].Id);
-                
+                ShowViewModel<MainViewModel>();
             }));
         }
     }

@@ -39,7 +39,6 @@ namespace TestToDo1.iOS.Views
             {
                 return UITableViewCellEditingStyle.Delete;
             }
-
             return UITableViewCellEditingStyle.None;
         }
 
