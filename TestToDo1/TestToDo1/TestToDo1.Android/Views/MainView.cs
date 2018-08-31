@@ -57,6 +57,14 @@ namespace TestToDo1.Droid.Views
             {
                 ViewModel.ShowLogView();
             }
+            if (e.MenuItem.ItemId == Resource.Id.nav_about)
+            {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+                alertDialog.SetTitle("About");
+                alertDialog.SetMessage("this app tasky ver. 2.0");
+                alertDialog.SetNeutralButton("Ok", delegate { alertDialog.Dispose(); });
+                alertDialog.Show();
+            }
             drawerLayout.CloseDrawers();
         }
 
