@@ -36,7 +36,7 @@ android:layout_height="match_parent">
                 android:id="@+id/swipeContainer1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <Mvx.MvxListView
+                <MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
                     android:minWidth="25px"
                     android:minHeight="25px"
                     android:background="@android:color/white"

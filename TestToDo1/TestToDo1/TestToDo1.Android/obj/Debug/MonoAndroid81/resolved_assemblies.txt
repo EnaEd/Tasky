@@ -9,6 +9,7 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\MvvmCross.Core.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\MvvmCross.Droid.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\MvvmCross.Droid.Shared.dll
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\MvvmCross.Droid.Support.V7.RecyclerView.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\MvvmCross.Localization.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\MvvmCross.Platform.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\MvvmCross.Platform.Droid.dll
@@ -26,6 +27,7 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.core.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.lib.e_sqlite3.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\SwipeMaker.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\System.Core.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\System.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.dll

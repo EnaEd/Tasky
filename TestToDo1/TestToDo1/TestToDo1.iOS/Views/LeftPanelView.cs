@@ -105,7 +105,6 @@ namespace TestToDo1.iOS.Views
             UIAlertController _alertController = UIAlertController.Create("About", "this app ver 2.0", UIAlertControllerStyle.Alert);
             _alertController.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, action => {
                 _alertController.Dispose();
-                
             }));
             PresentViewController(_alertController, true, null);
         }

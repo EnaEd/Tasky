@@ -50,6 +50,7 @@ namespace TestToDo1.Core.ViewModels
             }
         }
 
+
         public MainViewModel(IMvxPictureChooserTask pictureChooserTask, IItemRepository iitemRepository,IItemRepository itemRepository)
         {
             //for observableCollection using
@@ -67,6 +68,8 @@ namespace TestToDo1.Core.ViewModels
             UserImage = SignViewModel.UserTemp.UserImage;
             UserLogin = SignViewModel.UserTemp.UserLogin;
         }
+
+        public MainViewModel() { }
 
         private MvxCommand _goToItem;
         public ICommand GoToItem
@@ -153,19 +156,6 @@ namespace TestToDo1.Core.ViewModels
             ShowViewModel<LeftPanelViewModel>();
         }
 
-        private MvxCommand _backToCommand;
-        public ICommand BackToCommand
-        {
-            get
-            {
-                _backToCommand = _backToCommand ?? new MvxCommand(GoBack);
-                return _backToCommand;
-            }
-        }
-        private void GoBack()
-        {
-            ShowViewModel<SignViewModel>();
-        }
 
         //for swipe delete iOS
         private MvxCommand<int> _removeCommand;
@@ -176,7 +166,7 @@ namespace TestToDo1.Core.ViewModels
                 //try in iPhone....
                 //TempListItemsSQL.RemoveAt(i);
                 _itemRepository.Delete(TempListItemsSQL[i].Id);
-                
+
             }));
         }
     }

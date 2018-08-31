@@ -4,6 +4,7 @@ MvvmCross.Binding.Droid
 MvvmCross.Core
 MvvmCross.Droid
 MvvmCross.Droid.Shared
+MvvmCross.Droid.Support.V7.RecyclerView
 MvvmCross.Localization
 MvvmCross.Platform
 MvvmCross.Platform.Droid
@@ -21,6 +22,7 @@ SQLitePCLRaw.batteries_v2
 SQLitePCLRaw.core
 SQLitePCLRaw.lib.e_sqlite3
 SQLitePCLRaw.provider.e_sqlite3
+SwipeMaker
 System.Runtime
 TestToDo1.Core
 Xamarin.Android.Support.Animated.Vector.Drawable

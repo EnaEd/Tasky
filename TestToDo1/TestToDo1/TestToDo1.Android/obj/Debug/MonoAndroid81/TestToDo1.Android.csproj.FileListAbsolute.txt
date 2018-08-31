@@ -8,6 +8,7 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Core.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Droid.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Droid.Shared.dll
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Droid.Support.V7.RecyclerView.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Localization.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Platform.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Platform.Droid.dll
@@ -25,6 +26,7 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\SQLitePCLRaw.core.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\SQLitePCLRaw.lib.e_sqlite3.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\SwipeMaker.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Core.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.Android.Support.Animated.Vector.Drawable.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.Android.Support.Annotations.dll
@@ -41,7 +43,9 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.Android.Support.Vector.Drawable.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.iOS.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Core.pdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Core.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Binding.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Droid.Support.V7.RecyclerView.dll.config
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Localization.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Platform.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Plugins.PhoneCall.pdb
@@ -92,6 +96,8 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\res\layout\contactview.xml
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\res\drawable\ic_home.png
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\res\layout\contactitemview.xml
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\res\drawable\delete.png
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\res\drawable\trash.png
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\R.cs.flag
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\R.txt
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\uploadflags.txt
@@ -123,7 +129,6 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\Microsoft.CSharp.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\Mono.Security.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\Xamarin.iOS.pdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Core.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\TestToDo1.Android.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Binding.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Localization.dll.mdb
