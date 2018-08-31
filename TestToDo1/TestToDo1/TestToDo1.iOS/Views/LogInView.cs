@@ -9,7 +9,7 @@ using Cirrious.FluentLayouts.Touch;
 namespace TestToDo1.iOS.Views
 {
     [Register("LogInView")]
-    [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ActivePanel, true)]
+    [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ResetRoot, true)]
     public class LogInView : MvxViewController
     {
         private UIToolbar _uIToolbar;
