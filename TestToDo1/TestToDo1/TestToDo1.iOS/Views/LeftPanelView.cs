@@ -51,6 +51,7 @@ namespace TestToDo1.iOS.Views
             _about = new UIButton();
             _about.SetTitle("About", UIControlState.Normal);
             _about.SetTitleColor(UIColor.Blue, UIControlState.Normal);
+            _about.TouchUpInside += TellAboutUs;
             Add(_about);
 
             _logOff = new UIButton();
@@ -98,6 +99,13 @@ namespace TestToDo1.iOS.Views
             );
         }
 
+        private void TellAboutUs(object sender, System.EventArgs e)
+        {
+            UIAlertController _alertController = UIAlertController.Create("About", "this app ver 2.0", UIAlertControllerStyle.Alert);
+            _alertController.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, action =>
+                                                        _alertController.Dispose()));
+            PresentViewController(_alertController, true, null);
+        }
 
         private void ChoosePicture(object sender, System.EventArgs e)
         {
