@@ -63,7 +63,7 @@ namespace TestToDo1.Droid.Views
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
                 alertDialog.SetTitle("About");
                 alertDialog.SetMessage("this app tasky ver. 2.0");
-                alertDialog.SetNeutralButton("Ok", delegate { alertDialog.Dispose(); });
+                alertDialog.SetNeutralButton("Ok",delegate { alertDialog.Dispose(); });
                 alertDialog.Show();
             }
             drawerLayout.CloseDrawers();

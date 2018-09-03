@@ -36,12 +36,12 @@ namespace TestToDo1.Droid.Helper
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(_context);
             alertDialog.SetTitle("Delete task");
             alertDialog.SetMessage("do you really want to delete this task");
+                                                            //without create new ViewModel
             alertDialog.SetPositiveButton("Yes", delegate { Mvx.Resolve<IItemRepository>().Delete(item.Id);
                                                             alertDialog.Dispose();
                                                           });
             alertDialog.SetNegativeButton("No", delegate {alertDialog.Dispose();});
             alertDialog.Show();
-            //without create new ViewModel
             
         }
     }

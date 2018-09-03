@@ -76,7 +76,6 @@ namespace TestToDo1.Droid.Views
         void SwipeContainer_Refresh(object sender, EventArgs e)
         {
             //for test...
-            //await Task.Delay(3000);
             ViewModel.ShowSelf();
             (sender as SwipeRefreshLayout).Refreshing = false;
         }

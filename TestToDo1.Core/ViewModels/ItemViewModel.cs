@@ -141,7 +141,6 @@ namespace TestToDo1.Core.ViewModels
                 return _saveItem;
             }
         }
-
         private void DoSaveItem()
         {
             if (!string.IsNullOrEmpty(TaskContent))

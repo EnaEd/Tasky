@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TestToDo1.Core.Models;
 
 namespace TestToDo1.Core.IRepository

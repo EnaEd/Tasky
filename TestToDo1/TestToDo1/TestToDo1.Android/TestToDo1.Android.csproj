@@ -162,6 +162,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap\PhoneCallPluginBootstrap.cs" />
     <Compile Include="Bootstrap\PictureChooserPluginBootstrap.cs" />
+    <Compile Include="Converters\ByteToBitmapValueConverter.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Helper\Swipe2DismissTouchHelperCallback.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />

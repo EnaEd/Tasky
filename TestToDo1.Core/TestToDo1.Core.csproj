@@ -80,8 +80,6 @@
   <ItemGroup>
     <Compile Include="AppStart.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="Converters\ByteToBitmapValueConverter.cs" />
-    <Compile Include="Converters\ByteToUIImageValueConverter.cs" />
     <Compile Include="Models\AbstractModel.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Item.cs" />
