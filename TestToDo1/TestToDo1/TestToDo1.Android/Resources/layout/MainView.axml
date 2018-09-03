@@ -10,7 +10,7 @@ android:layout_height="match_parent">
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <Toolbar
-        android:id="@+id/_toolbarLogIn"
+        android:id="@+id/_toolbarMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:title="Task List"
@@ -40,12 +40,12 @@ android:layout_height="match_parent">
                     android:minWidth="25px"
                     android:minHeight="25px"
                     android:background="@android:color/white"
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_marginTop="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     local:MvxBind="ItemsSource TempListItemsSQL;ItemClick ChangeItem"
                     local:MvxItemTemplate="@layout/listitem_view"
-                    android:id="@+id/taskList" />
+                    android:id="@+id/taskList"/>
             </android.support.v4.widget.SwipeRefreshLayout>
 			</LinearLayout>
 </LinearLayout>

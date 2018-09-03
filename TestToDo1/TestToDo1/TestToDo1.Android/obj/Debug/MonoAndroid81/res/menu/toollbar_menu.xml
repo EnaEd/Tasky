@@ -1,0 +1,1 @@
+<menu tools:context=".MainView" xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"><item android:id="@+id/add" android:title="add" /><item android:id="@+id/search" android:title="search" /></menu>

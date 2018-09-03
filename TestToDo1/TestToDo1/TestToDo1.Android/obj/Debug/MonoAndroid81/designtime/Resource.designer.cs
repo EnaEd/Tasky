@@ -2725,8 +2725,8 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F0B0028
 			public const int image = 2131427368;
 			
-			// aapt resource value: 0x7F030023
-			public const int imageViewUserPhoto = 2130903075;
+			// aapt resource value: 0x7F030024
+			public const int imageViewUserPhoto = 2130903076;
 			
 			// aapt resource value: 0x7F0B005D
 			public const int info = 2131427421;
@@ -2764,29 +2764,29 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F0B001D
 			public const int middle = 2131427357;
 			
-			// aapt resource value: 0x7F030033
-			public const int mini = 2130903091;
+			// aapt resource value: 0x7F030034
+			public const int mini = 2130903092;
 			
 			// aapt resource value: 0x7F0B0016
 			public const int multiply = 2131427350;
 			
-			// aapt resource value: 0x7F030030
-			public const int MvvmCrossTagId = 2130903088;
-			
 			// aapt resource value: 0x7F030031
-			public const int MvxBindingTagUnique = 2130903089;
+			public const int MvvmCrossTagId = 2130903089;
+			
+			// aapt resource value: 0x7F030032
+			public const int MvxBindingTagUnique = 2130903090;
 			
 			// aapt resource value: 0x7F0C007B
 			public const int navigation_header_container = 2131492987;
 			
-			// aapt resource value: 0x7F030028
-			public const int nav_about = 2130903080;
-			
-			// aapt resource value: 0x7F030027
-			public const int nav_home = 2130903079;
-			
 			// aapt resource value: 0x7F030029
-			public const int nav_logOff = 2130903081;
+			public const int nav_about = 2130903081;
+			
+			// aapt resource value: 0x7F030028
+			public const int nav_home = 2130903080;
+			
+			// aapt resource value: 0x7F030030
+			public const int nav_logOff = 2130903088;
 			
 			// aapt resource value: 0x7F030016
 			public const int nav_view = 2130903062;
@@ -2797,8 +2797,8 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F0B0010
 			public const int none = 2131427344;
 			
-			// aapt resource value: 0x7F030032
-			public const int normal = 2130903090;
+			// aapt resource value: 0x7F030033
+			public const int normal = 2130903091;
 			
 			// aapt resource value: 0x7F0C0090
 			public const int notification_background = 2131493008;
@@ -2938,8 +2938,8 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F0B004E
 			public const int submit_area = 2131427406;
 			
-			// aapt resource value: 0x7F030020
-			public const int swipeContainer1 = 2130903072;
+			// aapt resource value: 0x7F030021
+			public const int swipeContainer1 = 2130903073;
 			
 			// aapt resource value: 0x7F030013
 			public const int switchDone = 2130903059;
@@ -2947,8 +2947,8 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F0B000D
 			public const int tabMode = 2131427341;
 			
-			// aapt resource value: 0x7F030021
-			public const int taskList = 2130903073;
+			// aapt resource value: 0x7F030022
+			public const int taskList = 2130903074;
 			
 			// aapt resource value: 0x7F0B005C
 			public const int text = 2131427420;
@@ -2977,17 +2977,17 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F030007
 			public const int textView1 = 2130903047;
 			
-			// aapt resource value: 0x7F030022
-			public const int textViewErrorLogin = 2130903074;
+			// aapt resource value: 0x7F030023
+			public const int textViewErrorLogin = 2130903075;
 			
 			// aapt resource value: 0x7F030008
 			public const int textViewToDo = 2130903048;
 			
-			// aapt resource value: 0x7F030024
-			public const int textViewUserLogin = 2130903076;
-			
 			// aapt resource value: 0x7F030025
-			public const int textViewUserPassword = 2130903077;
+			public const int textViewUserLogin = 2130903077;
+			
+			// aapt resource value: 0x7F030026
+			public const int textViewUserPassword = 2130903078;
 			
 			// aapt resource value: 0x7F0C0080
 			public const int text_input_password_toggle = 2131492992;
@@ -3049,8 +3049,11 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F030005
 			public const int _toolbarLogIn = 2130903045;
 			
-			// aapt resource value: 0x7F030026
-			public const int _toolbarSignIn = 2130903078;
+			// aapt resource value: 0x7F030020
+			public const int _toolbarMain = 2130903072;
+			
+			// aapt resource value: 0x7F030027
+			public const int _toolbarSignIn = 2130903079;
 			
 			static Id()
 			{

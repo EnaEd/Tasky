@@ -254,6 +254,7 @@
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\delete.png" />
     <AndroidResource Include="Resources\drawable\trash.png" />
+    <AndroidResource Include="Resources\menu\toollbar_menu.xml" />
     <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />

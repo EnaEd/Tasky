@@ -161,3 +161,15 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\System.ServiceModel.Internals.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.Linq.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.pdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\res\menu\toollbar_menu.xml
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Android.dll
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\TestToDo1.Android.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Binding.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Localization.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Platform.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Plugins.PhoneCall.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Plugins.PhoneCall.Droid.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Plugins.PictureChooser.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\Refractored.Fab.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\SQLiteNetExtensions.dll.mdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\TestToDo1.Core.dll.mdb

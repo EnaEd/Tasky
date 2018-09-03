@@ -19,7 +19,7 @@ namespace TestToDo1.Droid.Views
         private DrawerLayout drawerLayout;
         private MvxRecyclerView recyclerView;
         private ItemTouchHelper itemTouchHelper;
-
+        
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -53,7 +53,7 @@ namespace TestToDo1.Droid.Views
         private void NavigationViewClick(object sender, NavigationView.NavigationItemSelectedEventArgs e)
         {
             e.MenuItem.SetChecked(true);
-            
+
             if (e.MenuItem.ItemId == Resource.Id.nav_home)
             {
                 ViewModel.ShowSelf();
