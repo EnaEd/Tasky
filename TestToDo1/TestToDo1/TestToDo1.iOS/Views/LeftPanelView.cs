@@ -17,7 +17,6 @@ namespace TestToDo1.iOS.Views
         private UIImageView _userImage;
         private UILabel _userLogin;
         private UIButton _home;
-        private UIButton _about;
         private UIButton _logOff;
         private UIView _titleView;
         private UIButton _imageButton;
@@ -52,14 +51,9 @@ namespace TestToDo1.iOS.Views
             _contentConteiner.AddSubview(_userLogin);
 
             _home = new UIButton();
-            _home.SetTitle("Home", UIControlState.Normal);
+            _home.SetTitle("Task List", UIControlState.Normal);
             _home.SetTitleColor(UIColor.Blue,UIControlState.Normal);
             _contentConteiner.AddSubview(_home);
-
-            _about = new UIButton();
-            _about.SetTitle("About", UIControlState.Normal);
-            _about.SetTitleColor(UIColor.Blue, UIControlState.Normal);
-            _contentConteiner.AddSubview(_about);
 
             _logOff = new UIButton();
             _logOff.SetTitle("LogOff", UIControlState.Normal);
@@ -111,10 +105,7 @@ namespace TestToDo1.iOS.Views
                 _home.Below(_userLogin,50),
                 _home.AtLeftOf(_contentConteiner,25),
 
-                _about.Below(_home,25),
-                _about.AtLeftOf(_contentConteiner, 25),
-
-                _logOff.Below(_about, 25),
+                _logOff.Below(_home, 25),
                 _logOff.AtLeftOf(_contentConteiner, 25)
             );
             // very important to make scrolling work

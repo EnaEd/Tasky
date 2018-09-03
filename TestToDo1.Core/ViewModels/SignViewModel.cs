@@ -44,7 +44,7 @@ namespace TestToDo1.Core.ViewModels
                 RaisePropertyChanged(() => UserPassword);
             }
         }
-        
+
         private string _error;
         public string Error
         {
@@ -63,6 +63,7 @@ namespace TestToDo1.Core.ViewModels
         {
             Error = string.Empty;
             _userRepository = userRepository;
+            UserTemp = new User();
         }
 
         private MvxCommand _signCommand;
@@ -75,30 +76,24 @@ namespace TestToDo1.Core.ViewModels
         }
         private void DoSign()
         {
-            if (!string.IsNullOrEmpty(UserLogin) || !string.IsNullOrEmpty(UserPassword))
+            if (string.IsNullOrEmpty(UserLogin) || string.IsNullOrEmpty(UserPassword))
             {
                 Error = "Fields Login and Password must have a value";
                 return;
             }
-                UserTemp = new User();
-                UserTemp.UserLogin = this.UserLogin;
-                UserTemp.UserPassword = this.UserPassword;
+            UserTemp.UserLogin = this.UserLogin;
+            UserTemp.UserPassword = this.UserPassword;
+            User tempUser = _userRepository.GetUserByData(UserLogin,UserPassword);
 
-                if (_userRepository.GetUserByData(UserLogin)is User)
-                {
-                    UserTemp = _userRepository.GetUserByData(UserLogin);
-
-                    if (!UserPassword.Equals(UserTemp.UserPassword))
-                    {
-                        Error = "Wrong password";
-                        UserPassword = string.Empty;
-                        return;
-                    }
-                    ShowViewModel<MainViewModel>();
-                    return;
-                }
-                    Error = "UserLogin not exists";
-                    UserPassword = string.Empty;
+            if (tempUser is User)
+            {
+                UserTemp = tempUser;
+                ShowViewModel<MainViewModel>();
+                return;
+            }
+            Error = "Wrong password or login";
+            UserLogin = string.Empty;
+            UserPassword = string.Empty;
         }
 
         private MvxCommand _backToCommand;

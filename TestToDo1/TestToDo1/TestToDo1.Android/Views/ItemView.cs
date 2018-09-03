@@ -74,12 +74,7 @@ namespace TestToDo1.Droid.Views
 
         private void SwitchClick(object sender, EventArgs e)
         {
-            if (_switch.Checked)
-            {
-                _switch.Text = "Done";
-                return;
-            }
-                _switch.Text = "Not Done";
+            _switch.Text = (_switch.Checked) ? "Done" : "Not Done";
         }
     }
 }

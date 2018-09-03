@@ -60,6 +60,13 @@
                 android:hint="Password repeat..."
                 android:inputType="textPassword"
                 local:MvxBind="Text UserPasswordRepeat" />
+	<TextView
+		android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+		android:text="Password must contain at least 6 characters, min 1 letter UpperCase,min 1 digit"
+	/>
             <Button
                 android:text="Registration"
                 android:layout_width="match_parent"

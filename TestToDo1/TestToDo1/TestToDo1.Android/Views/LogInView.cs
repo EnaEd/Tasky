@@ -16,6 +16,11 @@ namespace TestToDo1.Droid.Views
 
             SetContentView(Resource.Layout.LogInView);
         }
-        
+        //hardware event back
+        public override void OnBackPressed()
+        {
+            //close to return 
+        }
+
     }
 }

@@ -23,6 +23,7 @@ namespace TestToDo1.iOS.Views
         private UILabel _labelError;
         private UIScrollView _scrollView;
         private UIView _contentConteiner;
+        private UILabel _passwordPattern;
 
         public RegistrationView()
         {
@@ -43,15 +44,16 @@ namespace TestToDo1.iOS.Views
             _scrollView.AddConstraints(_contentConteiner.FullHeightOf(_scrollView));
 
             var _BackBarButton = new UIBarButtonItem();
-            _BackBarButton.Title = "";
+            _BackBarButton.Title = string.Empty;
             NavigationItem.RightBarButtonItem = _BackBarButton;
             var _MenuBarButton = new UIBarButtonItem();
-            _BackBarButton.Title = "";
+            _BackBarButton.Title = "Back";
             NavigationItem.LeftBarButtonItem = _BackBarButton;
 
 
             _labelError = new UILabel();
             _labelError.TextColor = UIColor.Red;
+            _labelError.Font=_labelError.Font.WithSize(10);
             _contentConteiner.AddSubview(_labelError);
 
             _textUserName = new UITextField();
@@ -83,6 +85,13 @@ namespace TestToDo1.iOS.Views
             };
             _contentConteiner.AddSubview(_textUserPasswordRepeat);
 
+            _passwordPattern = new UILabel();
+            _passwordPattern.Text = "password must contain at least 6 characters, min 1 letter UpperCase,min 1 digit";
+            _passwordPattern.Font = _passwordPattern.Font.WithSize(10);
+            _passwordPattern.LineBreakMode = UILineBreakMode.WordWrap;
+            _passwordPattern.Lines = 0;
+            _contentConteiner.AddSubview(_passwordPattern);
+
             _imageUserPhoto = new UIImageView();
             _imageUserPhoto.Layer.CornerRadius = this._imageUserPhoto.Frame.Size.Height / 2;
             _imageUserPhoto.ClipsToBounds = true;
@@ -110,6 +119,7 @@ namespace TestToDo1.iOS.Views
             set.Bind(_textUserPasswordRepeat).To(vm => vm.UserPasswordRepeat);
             set.Bind(_buttonCreate).To(vm => vm.CreateUserCommand);
             set.Bind(_imageUserPhoto).For(v=>v.Image).To(vm => vm.UserImage).WithConversion("ByteToUIImage");
+            set.Bind(_BackBarButton).To(vm => vm.BackToCommand);
             set.Apply();
 
             //conastraint
@@ -143,6 +153,9 @@ namespace TestToDo1.iOS.Views
                 _textUserPasswordRepeat.WithSameWidth(_contentConteiner).Minus(130),
                 _textUserPasswordRepeat.Below(_textUserPassword, 40),
 
+                _passwordPattern.Below(_textUserPasswordRepeat,2),
+                _passwordPattern.WithSameWidth(_contentConteiner),
+
                 _imageUserPhoto.AtRightOf(_contentConteiner,25),
                 _imageUserPhoto.WithSameCenterY(_textUserName),
                 _imageUserPhoto.Width().EqualTo(80),
@@ -151,12 +164,12 @@ namespace TestToDo1.iOS.Views
                 _buttonPhoto.WithSameCenterX(_imageUserPhoto),
                 _buttonPhoto.Width().EqualTo(80),
                 _buttonPhoto.Height().EqualTo(80),
-                _buttonPhoto.Below(_imageUserPhoto,-80),
-
-                _buttonCreate.WithSameCenterX(_contentConteiner),
-                _buttonCreate.WithSameWidth(_contentConteiner).Minus(130),
-                _buttonCreate.Below(_textUserPasswordRepeat, 60)
+                _buttonPhoto.Below(_imageUserPhoto,-80)
                 );
+
+            View.AddConstraints(_buttonCreate.FullWidthOf(View, 25));
+            View.AddConstraints(_buttonCreate.Below(_passwordPattern, 25));
+            View.AddConstraints(_buttonCreate.Height().LessThanOrEqualTo(35));
 
             // very important to make scrolling work
             var bottomViewConstraint = _contentConteiner.Subviews.Last()

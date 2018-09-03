@@ -35,6 +35,7 @@ namespace TestToDo1.iOS.Views
             NavigationItem.RightBarButtonItem = _addBarButton;
 
             _table = new UITableView();
+            _table.RowHeight = 60;
             RefreshAsync();
             AddRefreshControl();
             _table.AddSubview(_refresh);
@@ -57,7 +58,7 @@ namespace TestToDo1.iOS.Views
             _table.ReloadData();
 
             View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
-            View.AddConstraints(_table.FullWidthOf(View,5));
+            View.AddConstraints(_table.FullWidthOf(View));
             View.AddConstraints(_table.FullHeightOf(View));
         }
 

@@ -2602,29 +2602,26 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F0C0039
 			public const int middle = 2131492921;
 			
-			// aapt resource value: 0x7F030033
-			public const int mini = 2130903091;
+			// aapt resource value: 0x7F030032
+			public const int mini = 2130903090;
 			
 			// aapt resource value: 0x7F0C001E
 			public const int multiply = 2131492894;
 			
-			// aapt resource value: 0x7F030030
-			public const int MvvmCrossTagId = 2130903088;
+			// aapt resource value: 0x7F030029
+			public const int MvvmCrossTagId = 2130903081;
 			
-			// aapt resource value: 0x7F030031
-			public const int MvxBindingTagUnique = 2130903089;
+			// aapt resource value: 0x7F030030
+			public const int MvxBindingTagUnique = 2130903088;
 			
 			// aapt resource value: 0x7F0C007B
 			public const int navigation_header_container = 2131492987;
 			
-			// aapt resource value: 0x7F030028
-			public const int nav_about = 2130903080;
-			
 			// aapt resource value: 0x7F030027
 			public const int nav_home = 2130903079;
 			
-			// aapt resource value: 0x7F030029
-			public const int nav_logOff = 2130903081;
+			// aapt resource value: 0x7F030028
+			public const int nav_logOff = 2130903080;
 			
 			// aapt resource value: 0x7F030016
 			public const int nav_view = 2130903062;
@@ -2635,8 +2632,8 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F0C0014
 			public const int none = 2131492884;
 			
-			// aapt resource value: 0x7F030032
-			public const int normal = 2130903090;
+			// aapt resource value: 0x7F030031
+			public const int normal = 2130903089;
 			
 			// aapt resource value: 0x7F0C0090
 			public const int notification_background = 2131493008;

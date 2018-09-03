@@ -26,14 +26,15 @@ namespace TestToDo1.iOS.Views
             View.BackgroundColor = UIColor.White;
 
             var _BackBarButton = new UIBarButtonItem();
-            _BackBarButton.Title = "";
+            _BackBarButton.Title = string.Empty;
             NavigationItem.RightBarButtonItem = _BackBarButton;
             var _MenuBarButton = new UIBarButtonItem();
-            _BackBarButton.Title = "";
+            _BackBarButton.Title = "Back";
             NavigationItem.LeftBarButtonItem = _BackBarButton;
 
             _labelError = new UILabel();
             _labelError.TextColor = UIColor.Red;
+            _labelError.Font = _labelError.Font.WithSize(10);
             Add(_labelError);
 
             _textUserLogin = new UITextField();
@@ -65,6 +66,7 @@ namespace TestToDo1.iOS.Views
             set.Bind(_textUserPassword).To(vm => vm.UserPassword);
             set.Bind(_buttonSignIn).To(vm => vm.SignCommand);
             set.Bind(_labelError).To(vm => vm.Error);
+            set.Bind(_BackBarButton).To(vm => vm.BackToCommand);
             
             set.Apply();
 

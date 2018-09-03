@@ -124,10 +124,16 @@ namespace TestToDo1.Core.ViewModels
         }
         private void DoCreateUser()
         {
+            if (string.IsNullOrEmpty(UserPassword)|| string.IsNullOrEmpty(UserPasswordRepeat))
+            {
+                Error = "password must contain a value";
+                return;
+            }
+
             bool checkFormat = PasswordFormatCheck();
             if (!checkFormat)
             {
-                Error = "Wrong password format";
+                Error = "Password must contain at least 6 characters, min 1 letter UpperCase, min 1 digit";
                 UserPassword = String.Empty;
                 UserPasswordRepeat = String.Empty;
                 return;
@@ -147,7 +153,7 @@ namespace TestToDo1.Core.ViewModels
                 SignViewModel.UserTemp.UserLogin = this.UserLogin;
                 SignViewModel.UserTemp.UserPassword = this.UserPassword;
                 SignViewModel.UserTemp.UserImage = UserImage;
-                if (_userRepository.GetUserByData(UserLogin) is User)
+                if (_userRepository.GetUserByData(UserLogin,UserPassword) is User)
                 {
                     Error = "This user exists";
                     UserPassword = String.Empty;
@@ -158,6 +164,7 @@ namespace TestToDo1.Core.ViewModels
                   ShowViewModel<MainViewModel>();
                     return;
             }
+            Error = "Fields Login must contain a value";
         }
 
         private MvxCommand _addPicture;
@@ -198,6 +205,18 @@ namespace TestToDo1.Core.ViewModels
             UserImage = memoryStream.ToArray();
         }
 
-
+        private MvxCommand _backToCommand;
+        public ICommand BackToCommand
+        {
+            get
+            {
+                _backToCommand = _backToCommand ?? new MvxCommand(GoBack);
+                return _backToCommand;
+            }
+        }
+        private void GoBack()
+        {
+            ShowViewModel<LogInViewModel>();
+        }
     }
 }

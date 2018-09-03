@@ -2626,14 +2626,11 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7f08001b
 			public const int multiply = 2131230747;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int nav_about = 2131230902;
-			
 			// aapt resource value: 0x7f0800b5
 			public const int nav_home = 2131230901;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int nav_logOff = 2131230903;
+			// aapt resource value: 0x7f0800b6
+			public const int nav_logOff = 2131230902;
 			
 			// aapt resource value: 0x7f080091
 			public const int nav_view = 2131230865;

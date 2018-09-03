@@ -45,10 +45,10 @@ namespace TestToDo1.Core.ViewModels
         {
             get
             {
-                return _homeCommand = _homeCommand ?? new MvxCommand(GoHomeYankees);
+                return _homeCommand = _homeCommand ?? new MvxCommand(GoHome);
             }
         }
-        private void GoHomeYankees()
+        private void GoHome()
         {
             ShowViewModel<MainViewModel>();
         }

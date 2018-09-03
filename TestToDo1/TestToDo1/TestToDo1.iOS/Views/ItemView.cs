@@ -9,6 +9,7 @@ using AddressBookUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CoreAnimation;
 
 namespace TestToDo1.iOS.Views
 {
@@ -20,6 +21,7 @@ namespace TestToDo1.iOS.Views
         private UIButton _buttonDelete;
         private UIButton _buttonCall;
         private UILabel _labelTaskName;
+        private UILabel _labelError;
         private UITextField _textEdit;
         private UITextField _textContactName;
         private UITextField _textContactPhone;
@@ -37,6 +39,11 @@ namespace TestToDo1.iOS.Views
             base.ViewDidLoad();
             View.BackgroundColor = UIColor.White;
 
+            var border = new CALayer();
+            nfloat width = 2;
+            border.BorderColor = UIColor.Black.CGColor;
+            border.BorderWidth = width;
+
             ViewModel.Show();
 
             _contentConteiner = new UIView();
@@ -50,16 +57,25 @@ namespace TestToDo1.iOS.Views
 
             _peopleConroller = new ABPeoplePickerNavigationController();
             _peopleConroller.SelectPerson2 += SelectPeople;
-            _peopleConroller.Cancelled += delegate {
+            _peopleConroller.Cancelled += delegate
+            {
                 this.DismissModalViewController(true);
             };
 
             _labelTaskName = new UILabel();
             _contentConteiner.AddSubview(_labelTaskName);
 
+
+            _labelError = new UILabel();
+            _labelError.Font = _labelError.Font.WithSize(10);
+            _labelError.TextColor = UIColor.Red;
+            _contentConteiner.AddSubview(_labelError);
+
             _textEdit = new UITextField();
             _textEdit.Placeholder = "todo...";
-            _textEdit.ShouldReturn = (textField) => {
+            _textEdit.BorderStyle = UITextBorderStyle.RoundedRect;
+            _textEdit.ShouldReturn = (textField) =>
+            {
                 textField.ResignFirstResponder();
                 return true;
             };
@@ -67,7 +83,9 @@ namespace TestToDo1.iOS.Views
 
             _textContactName = new UITextField();
             _textContactName.Placeholder = "add contact...";
-            _textContactName.ShouldReturn = (textField) => {
+            _textContactName.BorderStyle = UITextBorderStyle.RoundedRect;
+            _textContactName.ShouldReturn = (textField) =>
+            {
                 textField.ResignFirstResponder();
                 return true;
             };
@@ -77,7 +95,9 @@ namespace TestToDo1.iOS.Views
             _textContactPhone.Placeholder = "add Phone...";
             _textContactPhone.KeyboardType = UIKeyboardType.NamePhonePad;
             _textContactPhone.ReturnKeyType = UIReturnKeyType.Done;
-            _textContactPhone.ShouldReturn = (textField) => {
+            _textContactPhone.BorderStyle = UITextBorderStyle.RoundedRect;
+            _textContactPhone.ShouldReturn = (textField) =>
+            {
                 textField.ResignFirstResponder();
                 return true;
             };
@@ -127,6 +147,7 @@ namespace TestToDo1.iOS.Views
             set.Bind(_textContactName).To(vm => vm.ContactName);
             set.Bind(_textContactPhone).To(vm => vm.ContactPhone);
             set.Bind(_buttonCall).To(vm => vm.PhoneCallCommand);
+            set.Bind(_labelError).To(vm => vm.Error);
             set.Apply();
 
             //conastraint
@@ -147,18 +168,23 @@ namespace TestToDo1.iOS.Views
 
             _contentConteiner.AddConstraints(
 
-                 _labelTaskName.AtLeftOf(_contentConteiner,25),
-                 _labelTaskName.AtTopOf(_contentConteiner,25),
-                 _labelTaskName.WithSameWidth(_contentConteiner).Minus(130),
-                 _labelTaskName.Height().EqualTo(80),
+                 _labelError.AtTopOf(_contentConteiner),
+                 _labelError.WithSameWidth(_contentConteiner),
+                 _labelError.WithSameCenterX(_contentConteiner),
+                 _labelError.Height().EqualTo(20),
 
-                 _textEdit.AtLeftOf(_contentConteiner, 25),
-                 _textEdit.Below(_labelTaskName,20),
-                 _textEdit.WithSameWidth(_contentConteiner).Minus(130),
-                 _textEdit.Height().EqualTo(60),
+                 _labelTaskName.WithSameCenterX(_contentConteiner),
+                 _labelTaskName.Below(_labelError, 25),
+                 _labelTaskName.WithSameWidth(_contentConteiner).Minus(130),
+                 _labelTaskName.Height().LessThanOrEqualTo(60),
+
+                 _textEdit.WithSameCenterX(_contentConteiner),
+                 _textEdit.Below(_labelTaskName, 20),
+                 _textEdit.WithSameWidth(_contentConteiner).Minus(25),
+                 _textEdit.Height().LessThanOrEqualTo(60),
 
                  _textContactName.AtLeftOf(_contentConteiner, 25),
-                 _textContactName.Below(_textEdit,20),
+                 _textContactName.Below(_textEdit, 20),
                  _textContactName.WithSameWidth(_contentConteiner).Minus(130),
                  _textContactName.Height().EqualTo(40),
 
@@ -167,24 +193,26 @@ namespace TestToDo1.iOS.Views
                  _textContactPhone.WithSameWidth(_contentConteiner).Minus(130),
                  _textContactPhone.Height().EqualTo(40),
 
-                 _buttonSelectContact.AtRightOf(_contentConteiner,25),
-                 _buttonSelectContact.Below(_textEdit, 20),
+                 _buttonSelectContact.ToRightOf(_textContactName, 20),
+                 _buttonSelectContact.WithSameCenterY(_textContactName),
                  _buttonSelectContact.Width().EqualTo(80),
 
-                 _swith.AtLeftOf(_contentConteiner,25),
+                 _swith.AtLeftOf(_contentConteiner, 25),
                  _swith.Below(_textContactPhone, 20),
 
-                 _buttonCall.Below(_buttonSelectContact, 20),
-                 _buttonCall.AtRightOf(_contentConteiner,25),
+                 _buttonCall.WithSameCenterY(_textContactPhone),
+                 _buttonCall.ToRightOf(_textContactPhone, 20),
                  _buttonCall.Width().EqualTo(80),
 
-                 _buttonSave.AtLeftOf(_contentConteiner,25),
-                 _buttonSave.Below(_swith,40),
+                 _buttonSave.AtLeftOf(_contentConteiner, 25),
+                 _buttonSave.Below(_swith, 40),
                  _buttonSave.Width().EqualTo(80),
+                 _buttonSave.Height().LessThanOrEqualTo(35),
 
-                 _buttonDelete.AtRightOf(_contentConteiner,25),
+                 _buttonDelete.WithSameCenterX(_buttonCall),
                  _buttonDelete.Below(_swith, 40),
-                 _buttonDelete.Width().EqualTo(80)
+                 _buttonDelete.Width().EqualTo(80),
+                 _buttonDelete.Height().LessThanOrEqualTo(35)
 
                 );
             // very important to make scrolling work
@@ -197,21 +225,15 @@ namespace TestToDo1.iOS.Views
         {
             ViewModel.ContactName = $"{e.Person.LastName} {e.Person.FirstName}";
             var listPhone = e.Person.GetPhones();
-
-            if (listPhone.Count>0)
+            //any method
+            if (listPhone.Count > 0)
             {
-                char[] phoneCharArray = listPhone[0].Value.ToCharArray();
-                string phoneresult = String.Empty;
-                for(int i=0;i<phoneCharArray.Length;i++)
-                {
-                    if (!phoneCharArray[i].Equals(' '))
-                    {
-                        phoneresult +=phoneCharArray[i] ;
-                    }
-                }
-                ViewModel.ContactPhone = phoneresult;
+                string phoneResult = Convert.ToString(listPhone.FirstOrDefault().Value);
+                phoneResult = phoneResult.Replace(" ", "");
+
+                ViewModel.ContactPhone = phoneResult;
             }
-                this.DismissModalViewController(true);
+            this.DismissModalViewController(true);
         }
     }
 }

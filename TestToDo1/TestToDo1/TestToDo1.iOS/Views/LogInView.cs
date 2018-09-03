@@ -27,11 +27,11 @@ namespace TestToDo1.iOS.Views
             View.BackgroundColor = UIColor.White;
 
             var _BackBarButton = new UIBarButtonItem();
-            _BackBarButton.Title = "";
+            _BackBarButton.Title = string.Empty;
             NavigationItem.RightBarButtonItem = _BackBarButton;
 
             var _MenuBarButton = new UIBarButtonItem();
-            _BackBarButton.Title = "";
+            _BackBarButton.Title =string.Empty;
             NavigationItem.LeftBarButtonItem = _BackBarButton;
 
             _buttonSignIn = new UIButton(UIButtonType.System);
@@ -68,7 +68,8 @@ namespace TestToDo1.iOS.Views
             CreateGestureRecognizer();
             
         }
-        void CreateGestureRecognizer()//call this method in the ViewDidLoad override class.
+        //call this method in the ViewDidLoad override class.
+        void CreateGestureRecognizer()
         {
             UIPanGestureRecognizer swipeRecognizer = new UIPanGestureRecognizer();
             swipeRecognizer.AddTarget(() => HandleSwipe(swipeRecognizer));
