@@ -414,6 +414,24 @@ namespace TestToDo1.Droid
 			public const int buttonTintMode = 2130772118;
 			
 			// aapt resource value: 0x7F010000
+			public const int cardBackgroundColor = 2130771968;
+			
+			// aapt resource value: 0x7F010001
+			public const int cardCornerRadius = 2130771969;
+			
+			// aapt resource value: 0x7F010002
+			public const int cardElevation = 2130771970;
+			
+			// aapt resource value: 0x7F010003
+			public const int cardMaxElevation = 2130771971;
+			
+			// aapt resource value: 0x7F010005
+			public const int cardPreventCornerOverlap = 2130771973;
+			
+			// aapt resource value: 0x7F010004
+			public const int cardUseCompatPadding = 2130771972;
+			
+			// aapt resource value: 0x7F010000
 			public const int cb_color = 2130771968;
 			
 			// aapt resource value: 0x7F010001
@@ -505,6 +523,21 @@ namespace TestToDo1.Droid
 			
 			// aapt resource value: 0x7F01001A
 			public const int contentInsetStartWithNavigation = 2130771994;
+			
+			// aapt resource value: 0x7F010006
+			public const int contentPadding = 2130771974;
+			
+			// aapt resource value: 0x7F01000A
+			public const int contentPaddingBottom = 2130771978;
+			
+			// aapt resource value: 0x7F010007
+			public const int contentPaddingLeft = 2130771975;
+			
+			// aapt resource value: 0x7F010008
+			public const int contentPaddingRight = 2130771976;
+			
+			// aapt resource value: 0x7F010009
+			public const int contentPaddingTop = 2130771977;
 			
 			// aapt resource value: 0x7F0100B0
 			public const int contentScrim = 2130772144;
@@ -1387,6 +1420,18 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F0A0011
 			public const int button_material_light = 2131361809;
 			
+			// aapt resource value: 0x7F030000
+			public const int cardview_dark_background = 2130903040;
+			
+			// aapt resource value: 0x7F030001
+			public const int cardview_light_background = 2130903041;
+			
+			// aapt resource value: 0x7F030002
+			public const int cardview_shadow_end_color = 2130903042;
+			
+			// aapt resource value: 0x7F030003
+			public const int cardview_shadow_start_color = 2130903043;
+			
 			// aapt resource value: 0x7F060002
 			public const int ColorPrimary = 2131099650;
 			
@@ -1810,6 +1855,15 @@ namespace TestToDo1.Droid
 			
 			// aapt resource value: 0x7F070004
 			public const int abc_text_size_title_material_toolbar = 2131165188;
+			
+			// aapt resource value: 0x7F040000
+			public const int cardview_compat_inset_shadow = 2130968576;
+			
+			// aapt resource value: 0x7F040001
+			public const int cardview_default_elevation = 2130968577;
+			
+			// aapt resource value: 0x7F040002
+			public const int cardview_default_radius = 2130968578;
 			
 			// aapt resource value: 0x7F070056
 			public const int design_appbar_elevation = 2131165270;
@@ -3481,6 +3535,9 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F08008D
 			public const int Base_Animation_AppCompat_DropDownUp = 2131230861;
 			
+			// aapt resource value: 0x7F020001
+			public const int Base_CardView = 2130837505;
+			
 			// aapt resource value: 0x7F08008F
 			public const int Base_DialogWindowTitleBackground_AppCompat = 2131230863;
 			
@@ -3930,6 +3987,15 @@ namespace TestToDo1.Droid
 			
 			// aapt resource value: 0x7F0800D2
 			public const int Base_Widget_Design_TabLayout = 2131230930;
+			
+			// aapt resource value: 0x7F020000
+			public const int CardView = 2130837504;
+			
+			// aapt resource value: 0x7F020002
+			public const int CardView_Dark = 2130837506;
+			
+			// aapt resource value: 0x7F020003
+			public const int CardView_Light = 2130837507;
 			
 			// aapt resource value: 0x7F070004
 			public const int MyDrawerArrowStyle = 2131165188;
@@ -5417,6 +5483,60 @@ namespace TestToDo1.Droid
 			
 			// aapt resource value: 0x7F090201
 			public const int ButtonBarLayout_allowStacking = 2131296769;
+			
+			public static int[] CardView = new int[] {
+					16843071,
+					16843072,
+					2130771968,
+					2130771969,
+					2130771970,
+					2130771971,
+					2130771972,
+					2130771973,
+					2130771974,
+					2130771975,
+					2130771976,
+					2130771977,
+					2130771978};
+			
+			// aapt resource value: 0x1
+			public const int CardView_android_minHeight = 1;
+			
+			// aapt resource value: 0x7F090532
+			public const int CardView_android_minWidth = 2131297586;
+			
+			// aapt resource value: 0x2
+			public const int CardView_cardBackgroundColor = 2;
+			
+			// aapt resource value: 0x3
+			public const int CardView_cardCornerRadius = 3;
+			
+			// aapt resource value: 0x4
+			public const int CardView_cardElevation = 4;
+			
+			// aapt resource value: 0x5
+			public const int CardView_cardMaxElevation = 5;
+			
+			// aapt resource value: 0x7
+			public const int CardView_cardPreventCornerOverlap = 7;
+			
+			// aapt resource value: 0x6
+			public const int CardView_cardUseCompatPadding = 6;
+			
+			// aapt resource value: 0x8
+			public const int CardView_contentPadding = 8;
+			
+			// aapt resource value: 0x12
+			public const int CardView_contentPaddingBottom = 18;
+			
+			// aapt resource value: 0x9
+			public const int CardView_contentPaddingLeft = 9;
+			
+			// aapt resource value: 0x10
+			public const int CardView_contentPaddingRight = 16;
+			
+			// aapt resource value: 0x11
+			public const int CardView_contentPaddingTop = 17;
 			
 			public static int[] CircleButton = new int[] {
 					2130771968,

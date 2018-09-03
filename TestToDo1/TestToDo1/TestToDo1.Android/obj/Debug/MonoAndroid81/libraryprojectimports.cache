@@ -15,8 +15,8 @@
     <Jar>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\35\jl\bin\classes.jar</Jar>
     <Jar>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\36\jl\bin\classes.jar</Jar>
     <Jar>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\37\jl\bin\classes.jar</Jar>
-    <Jar>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\38\jl\bin\classes.jar</Jar>
     <Jar>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\39\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\40\jl\bin\classes.jar</Jar>
   </Jars>
   <ResolvedResourceDirectories>
     <ResolvedResourceDirectory>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\0\jl\res</ResolvedResourceDirectory>
@@ -39,7 +39,7 @@
     <ResolvedResourceDirectory>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\35\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\36\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\37\jl\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\38\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\39\jl\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
     <ResolvedAssetDirectory>obj\\Debug\MonoAndroid81\lp\0\jl\assets</ResolvedAssetDirectory>
@@ -82,6 +82,6 @@
     <ResolvedResourceDirectoryStamp>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\35.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\36.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\37.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\38.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\lp\39.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

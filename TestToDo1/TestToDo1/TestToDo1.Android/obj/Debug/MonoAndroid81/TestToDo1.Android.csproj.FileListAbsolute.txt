@@ -1,3 +1,5 @@
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\TestToDo1.Android.csprojAssemblyReference.cache
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\res.flag
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Android.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Android.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\com.companyname.NewApp.Android.apk
@@ -39,9 +41,9 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.Android.Support.Transition.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.Android.Support.v4.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.Android.Support.v7.CardView.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.Android.Support.v7.RecyclerView.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.Android.Support.Vector.Drawable.dll
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.iOS.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Core.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Core.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\MvvmCross.Binding.dll.mdb
@@ -61,10 +63,6 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\SQLite-net.xml
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\SQLiteNetExtensions.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\SQLiteNetExtensions.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.iOS.pdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\Xamarin.iOS.xml
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\TestToDo1.Android.csprojAssemblyReference.cache
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\res.flag
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\TestToDo1.Android.csproj.CoreCompileInputs.cache
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\TestToDo1.Android.csproj.CopyComplete
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\TestToDo1.Android.dll
@@ -128,7 +126,6 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\System.Xml.Linq.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\Microsoft.CSharp.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\Mono.Security.pdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\Xamarin.iOS.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\TestToDo1.Android.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Binding.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Localization.dll.mdb
@@ -164,15 +161,3 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.A
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\System.ServiceModel.Internals.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.Linq.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.pdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.iOS.pdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\bin\Debug\TestToDo1.Android.dll
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\TestToDo1.Android.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Binding.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Localization.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Platform.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Plugins.PhoneCall.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Plugins.PhoneCall.Droid.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\MvvmCross.Plugins.PictureChooser.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\Refractored.Fab.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\SQLiteNetExtensions.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.Android\obj\Debug\MonoAndroid81\linksrc\TestToDo1.Core.dll.mdb
