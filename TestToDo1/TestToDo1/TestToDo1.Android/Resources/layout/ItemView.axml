@@ -8,43 +8,45 @@
 <LinearLayout 
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <Toolbar
-        android:id="@+id/_toolbarLogIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:title="Item Detail"
-        android:background="?android:attr/colorPrimary"
-        android:minHeight="?android:attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
-			<TextView
-				android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-				android:text="text"
-				android:textStyle="bold"
-                android:textSize="20dp"
-				android:textColor="@android:color/holo_red_light"
-				android:layout_marginLeft="20dp"
-				local:MvxBind="Text Error"
-				/>
-        <Refractored.Fab.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            local:fab_size="mini"
-            android:src="@drawable/abc_ic_clear_material"
-            android:layout_gravity="end"
-            local:MvxBind="Click BackToCommand" />
-    </Toolbar>
+    android:layout_height="match_parent"
+	>
+		<Toolbar
+			android:id="@+id/_toolbarLogIn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:title="Item Detail"
+			android:background="?android:attr/colorPrimary"
+			android:minHeight="?android:attr/actionBarSize"
+			android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+			android:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+			<ImageButton
+				android:id="@+id/_buttonBack"
+				android:layout_width="32dp"
+				android:layout_height="32dp"
+				android:layout_marginRight="25dp"
+				android:background="@drawable/backAndroidBlack"
+				local:fab_size="mini"
+				android:layout_gravity="end"
+				local:MvxBind="Click BackToCommand" />
+		</Toolbar>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+				>
+			<TextView
+				android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:text="text"
+				android:layout_gravity="center"
+				android:textStyle="bold"
+                android:textSize="20dp"
+				android:textColor="@android:color/holo_red_light"
+				local:MvxBind="Text Error"
+				/>
                 <TextView
                     android:text="Text"
                     android:layout_width="match_parent"
@@ -99,6 +101,7 @@
                         android:text="Add"
                         android:layout_width="85dp"
 						android:layout_marginTop="30dp"
+						android:layout_marginRight="10dp"
                         android:layout_height="30dp"
                         android:layout_alignParentRight="true"
                         android:id="@+id/buttonAdd" />
@@ -107,6 +110,7 @@
                         android:text="Call"
                         android:layout_width="85dp"
 						android:layout_marginTop="70dp"
+						android:layout_marginRight="10dp"
                         android:layout_height="30dp"
                         android:layout_alignParentRight="true"
                         local:MvxBind="Click PhoneCallCommand"
@@ -115,6 +119,7 @@
                 <Switch
                     android:layout_width="wrap_content"
                     android:layout_gravity="end"
+					android:layout_marginRight="10dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     local:MvxBind="Checked TaskDone"
@@ -122,13 +127,14 @@
                 <RelativeLayout
                     android:minWidth="25px"
                     android:minHeight="25px"
-					android:layout_marginTop="25dp"
-					android:layout_gravity="end"
+					android:layout_marginTop="200dp"
+					android:layout_gravity="bottom"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
                     <Button
                         android:text="Save"
                         android:layout_width="85dp"
+						android:layout_marginLeft="10dp"
                         android:layout_height="wrap_content"
                         android:background="@android:color/holo_green_dark"
                         local:MvxBind="Click SaveItem"
@@ -139,6 +145,7 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
+						android:layout_marginRight="10dp"
                         local:MvxBind="Click DeleteItem"
                         android:id="@+id/buttonDelete" />
                 </RelativeLayout>
@@ -154,4 +161,4 @@
 		  android:background="@android:color/white"
 		  local:headerLayout="@layout/listdrawermain_view"
           local:menu="@menu/nav_menu"/>
-    </android.support.v4.widget.DrawerLayout>
+</android.support.v4.widget.DrawerLayout>

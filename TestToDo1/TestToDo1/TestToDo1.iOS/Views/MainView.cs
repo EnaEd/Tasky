@@ -31,7 +31,7 @@ namespace TestToDo1.iOS.Views
             ViewModel.Show();
 
             var _addBarButton = new UIBarButtonItem(UIBarButtonSystemItem.Add);
-            _addBarButton.Title = "";
+            _addBarButton.Title = string.Empty;
             NavigationItem.RightBarButtonItem = _addBarButton;
 
             _table = new UITableView();

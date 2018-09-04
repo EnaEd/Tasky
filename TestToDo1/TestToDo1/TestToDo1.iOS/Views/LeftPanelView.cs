@@ -22,7 +22,8 @@ namespace TestToDo1.iOS.Views
         private UIButton _imageButton;
         private UIView _contentConteiner;
         private UIScrollView _scrollView;
-
+        private UIImage _imageTemp;
+        
         public override void ViewDidLoad()
         {            
             base.ViewDidLoad();
@@ -35,7 +36,7 @@ namespace TestToDo1.iOS.Views
             Add(_scrollView);
 
             _titleView = new UIView();
-            _titleView.BackgroundColor = UIColor.FromRGB(144, 238, 144);
+            _titleView.BackgroundColor = UIColor.FromRGB(245, 245, 239);
             _contentConteiner.AddSubview(_titleView);
 
             _userImage = new UIImageView();
@@ -53,11 +54,13 @@ namespace TestToDo1.iOS.Views
             _home = new UIButton();
             _home.SetTitle("Task List", UIControlState.Normal);
             _home.SetTitleColor(UIColor.Blue,UIControlState.Normal);
+            _home.SetImage(UIImage.FromFile("Image/todoIOS.png"), UIControlState.Normal);
             _contentConteiner.AddSubview(_home);
 
             _logOff = new UIButton();
             _logOff.SetTitle("LogOff", UIControlState.Normal);
             _logOff.SetTitleColor(UIColor.Blue, UIControlState.Normal);
+            _logOff.SetImage(UIImage.FromFile("Image/logoffIOS.png"), UIControlState.Normal);
             _contentConteiner.AddSubview(_logOff);
 
             var set = this.CreateBindingSet<LeftPanelView,LeftPanelViewModel>();
@@ -103,10 +106,10 @@ namespace TestToDo1.iOS.Views
                 _userLogin.WithSameWidth(_contentConteiner).Minus(40),
 
                 _home.Below(_userLogin,50),
-                _home.AtLeftOf(_contentConteiner,25),
+                _home.AtLeftOf(_contentConteiner,5),
 
-                _logOff.Below(_home, 25),
-                _logOff.AtLeftOf(_contentConteiner, 25)
+                _logOff.Below(_home, 5),
+                _logOff.AtLeftOf(_contentConteiner,5)
             );
             // very important to make scrolling work
             var bottomViewConstraint = _contentConteiner.Subviews.Last()

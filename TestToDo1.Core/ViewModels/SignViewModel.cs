@@ -88,6 +88,8 @@ namespace TestToDo1.Core.ViewModels
             if (tempUser is User)
             {
                 UserTemp = tempUser;
+                UserTemp.IsLogged = true;
+                _userRepository.Save(UserTemp);
                 ShowViewModel<MainViewModel>();
                 return;
             }

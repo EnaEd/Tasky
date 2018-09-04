@@ -53,7 +53,7 @@ namespace TestToDo1.iOS.Views
 
             var _BackBarButton = new UIBarButtonItem();
             _BackBarButton.Title = "Back";
-            NavigationItem.RightBarButtonItem = _BackBarButton;
+            NavigationItem.LeftBarButtonItem = _BackBarButton;
 
             _peopleConroller = new ABPeoplePickerNavigationController();
             _peopleConroller.SelectPerson2 += SelectPeople;

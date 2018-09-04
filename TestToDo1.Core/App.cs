@@ -11,7 +11,7 @@ namespace TestToDo1.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-
+           
             RegisterAppStart(new AppStart());
         }
     }

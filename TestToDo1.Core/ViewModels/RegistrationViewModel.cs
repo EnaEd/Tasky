@@ -1,9 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
 using MvvmCross.Plugins.PictureChooser;
 using TestToDo1.Core.Models;
 using TestToDo1.Core.IRepository;
@@ -133,7 +131,7 @@ namespace TestToDo1.Core.ViewModels
             bool checkFormat = PasswordFormatCheck();
             if (!checkFormat)
             {
-                Error = "Password must contain at least 6 characters, min 1 letter UpperCase, min 1 digit";
+                Error = "Wrong password format";
                 UserPassword = String.Empty;
                 UserPasswordRepeat = String.Empty;
                 return;
@@ -160,6 +158,7 @@ namespace TestToDo1.Core.ViewModels
                     UserPasswordRepeat = String.Empty;
                     return;
                 }
+                  SignViewModel.UserTemp.IsLogged = true;
                   _userRepository.Save(SignViewModel.UserTemp);
                   ShowViewModel<MainViewModel>();
                     return;

@@ -5,6 +5,8 @@ using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
 using Android.Widget;
 using MvvmCross.Droid.Views;
+using MvvmCross.Platform;
+using TestToDo1.Core.IRepository;
 using TestToDo1.Core.ViewModels;
 
 namespace TestToDo1.Droid.Views
@@ -56,6 +58,8 @@ namespace TestToDo1.Droid.Views
             }
             if (e.MenuItem.ItemId == Resource.Id.nav_logOff)
             {
+                SignViewModel.UserTemp.IsLogged = false;
+                Mvx.Resolve<IUserRepository>().Save(SignViewModel.UserTemp);
                 ViewModel.ShowLogView();
             }
             drawerLayout.CloseDrawers();

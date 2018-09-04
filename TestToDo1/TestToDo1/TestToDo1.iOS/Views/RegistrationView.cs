@@ -137,7 +137,7 @@ namespace TestToDo1.iOS.Views
             _contentConteiner.AddConstraints(
 
                 _labelError.WithSameCenterX(_contentConteiner),
-                _labelError.WithSameWidth(_contentConteiner).Minus(100),
+                //_labelError.WithSameWidth(_contentConteiner).Minus(100),
                 _labelError.AtTopOf(_contentConteiner),
                 _labelError.Height().EqualTo(13),
 
@@ -153,9 +153,6 @@ namespace TestToDo1.iOS.Views
                 _textUserPasswordRepeat.WithSameWidth(_contentConteiner).Minus(130),
                 _textUserPasswordRepeat.Below(_textUserPassword, 40),
 
-                _passwordPattern.Below(_textUserPasswordRepeat,2),
-                _passwordPattern.WithSameWidth(_contentConteiner),
-
                 _imageUserPhoto.AtRightOf(_contentConteiner,25),
                 _imageUserPhoto.WithSameCenterY(_textUserName),
                 _imageUserPhoto.Width().EqualTo(80),
@@ -166,6 +163,8 @@ namespace TestToDo1.iOS.Views
                 _buttonPhoto.Height().EqualTo(80),
                 _buttonPhoto.Below(_imageUserPhoto,-80)
                 );
+            View.AddConstraints(_passwordPattern.Below(_textUserPasswordRepeat, 2));
+            View.AddConstraints(_passwordPattern.FullWidthOf(View, 25));
 
             View.AddConstraints(_buttonCreate.FullWidthOf(View, 25));
             View.AddConstraints(_buttonCreate.Below(_passwordPattern, 25));

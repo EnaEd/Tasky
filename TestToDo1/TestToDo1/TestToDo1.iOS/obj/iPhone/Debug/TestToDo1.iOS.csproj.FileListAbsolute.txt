@@ -45,10 +45,11 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.i
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\device-builds\iphone6.1-11.4.1\actool\_BundleResourceWithLogicalName.items
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\device-builds\iphone6.1-11.4.1\coremlc\_PartialAppManifest.items
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\device-builds\iphone6.1-11.4.1\coremlc\_BundleResourceWithLogicalName.items
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\device-builds\iphone6.1-11.4.1\optimized\Image\PhotoIOS.png
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\device-builds\iphone6.1-11.4.1\optimized\
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\TestToDo1.iOS.csprojAssemblyReference.cache
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\TestToDo1.iOS.csproj.CoreCompileInputs.cache
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\TestToDo1.iOS.csproj.CopyComplete
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\TestToDo1.iOS.exe
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\TestToDo1.iOS.pdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\device-builds\iphone6.1-11.4.1\optimized\Image\logoffIOS.png
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhone\Debug\device-builds\iphone6.1-11.4.1\optimized\Image\todoIOS.png

@@ -23,7 +23,6 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.i
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.provider.sqlite3.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\TestToDo1.Core.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\Xamarin-Sidebar-Unified.dll
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\Mono.Android.dll
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\TestToDo1.Core.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\TestToDo1.Core.dll.mdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\MvvmCross.Binding.dll.mdb
@@ -41,8 +40,6 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.i
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\SQLite-net.xml
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\SQLiteNetExtensions.pdb
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\SQLiteNetExtensions.dll.mdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\Mono.Android.pdb
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\bin\iPhoneSimulator\Debug\Mono.Android.xml
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items

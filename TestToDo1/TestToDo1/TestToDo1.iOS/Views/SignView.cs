@@ -73,7 +73,7 @@ namespace TestToDo1.iOS.Views
             //conastraint
             View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
-            View.AddConstraints(_labelError.FullWidthOf(View, 25));
+            View.AddConstraints(_labelError.WithSameCenterX(View));
             View.AddConstraints(_labelError.AtTopOf(View, 61));
             View.AddConstraints(_labelError.Height().EqualTo(20));
 

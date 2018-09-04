@@ -55,5 +55,12 @@ namespace TestToDo1.Droid.Services
                                 .FirstOrDefault(item =>item.UserLogin.Equals(login)&& item.UserPassword.Equals(password)));
             return result;
         }
+
+        public User GetLoggedUser()
+        {
+            User result= (_database.Table<User>()
+                                .FirstOrDefault(item => item.IsLogged.Equals(true)));
+            return result;
+        }
     }
 }
