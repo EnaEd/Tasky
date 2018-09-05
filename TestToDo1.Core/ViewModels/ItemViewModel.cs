@@ -171,6 +171,7 @@ namespace TestToDo1.Core.ViewModels
                 Item.UserId = SignViewModel.UserTemp.Id;
                 _itemRepository.Save(Item);
                 GoBack();
+                return;
                 #endregion
 
                 #region use observsableCollection

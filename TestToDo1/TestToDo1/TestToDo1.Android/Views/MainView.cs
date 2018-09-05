@@ -11,6 +11,7 @@ using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
 using Refractored.Fab;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using TestToDo1.Core.IRepository;
 using TestToDo1.Core.ViewModels;
@@ -26,12 +27,20 @@ namespace TestToDo1.Droid.Views
         private DrawerLayout drawerLayout;
         private MvxRecyclerView recyclerView;
         private ItemTouchHelper itemTouchHelper;
+        private string _path;
+        private string _filePath;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.MainView);
+
+            //save user
+            _path = Application.Context.FilesDir.Path;
+            _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),"User.txt");
+            File.WriteAllText(_filePath,$"{SignViewModel.UserTemp.UserLogin}." +
+                                        $"{SignViewModel.UserTemp.UserPassword}");
 
             recyclerView = FindViewById<MvxRecyclerView>(Resource.Id.taskList);
             itemTouchHelper = new ItemTouchHelper(new Swipe2DismissTouchHelperCallback(this));
@@ -66,8 +75,7 @@ namespace TestToDo1.Droid.Views
             }
             if (e.MenuItem.ItemId == Resource.Id.nav_logOff)
             {
-                SignViewModel.UserTemp.IsLogged = false;
-                Mvx.Resolve<IUserRepository>().Save(SignViewModel.UserTemp);
+                File.Delete(_filePath);
                 ViewModel.ShowLogView();
             }
             drawerLayout.CloseDrawers();

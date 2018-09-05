@@ -1,12 +1,11 @@
 ﻿using System;
+using System.IO;
 using Android.App;
 using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
 using Android.Widget;
 using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
-using TestToDo1.Core.IRepository;
 using TestToDo1.Core.ViewModels;
 
 namespace TestToDo1.Droid.Views
@@ -18,12 +17,20 @@ namespace TestToDo1.Droid.Views
         private Button _buttonAdd;
         private NavigationView navigationView;
         private DrawerLayout drawerLayout;
+        private string _path;
+        private string _filePath;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.ItemView);
+
+            //save user
+            _path = Application.Context.FilesDir.Path;
+            _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "User.txt");
+            File.WriteAllText(_filePath, $"{SignViewModel.UserTemp.UserLogin}." +
+                                        $"{SignViewModel.UserTemp.UserPassword}");
 
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id._drawerItemView);
 
@@ -58,8 +65,7 @@ namespace TestToDo1.Droid.Views
             }
             if (e.MenuItem.ItemId == Resource.Id.nav_logOff)
             {
-                SignViewModel.UserTemp.IsLogged = false;
-                Mvx.Resolve<IUserRepository>().Save(SignViewModel.UserTemp);
+                File.Delete(_filePath);
                 ViewModel.ShowLogView();
             }
             drawerLayout.CloseDrawers();
