@@ -39,6 +39,8 @@ namespace TestToDo1.iOS.Views
 
             _textUserLogin = new UITextField();
             _textUserLogin.Placeholder = "Login";
+            _textUserLogin.Layer.BorderWidth = 2;
+            _textUserLogin.Layer.CornerRadius = 5;
             _textUserLogin.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserLogin.ShouldReturn = (textField) => {
                 textField.ResignFirstResponder();
@@ -48,6 +50,8 @@ namespace TestToDo1.iOS.Views
 
             _textUserPassword = new UITextField();
             _textUserPassword.Placeholder = "Password";
+            _textUserPassword.Layer.BorderWidth = 2;
+            _textUserPassword.Layer.CornerRadius = 5;
             _textUserPassword.SecureTextEntry = true;
             _textUserPassword.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserPassword.ShouldReturn = (textField) => {

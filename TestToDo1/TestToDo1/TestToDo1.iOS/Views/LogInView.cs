@@ -23,7 +23,6 @@ namespace TestToDo1.iOS.Views
         {
             base.ViewDidLoad();
 
-
             View.BackgroundColor = UIColor.FromRGB(204, 242, 255);
 
             var _BackBarButton = new UIBarButtonItem();
@@ -38,10 +37,10 @@ namespace TestToDo1.iOS.Views
             _presentImage.Image = UIImage.FromFile("Image/todo-list.png");
             Add(_presentImage);
 
-
             _buttonSignIn = new UIButton(UIButtonType.System);
             _buttonSignIn.SetTitle("SIGNIN", UIControlState.Normal);
             _buttonSignIn.Layer.CornerRadius = 5;
+            _buttonSignIn.Layer.BorderWidth = 2;
             _buttonSignIn.BackgroundColor = UIColor.Blue;
             _buttonSignIn.SetTitleColor(UIColor.White, UIControlState.Normal);
             Add(_buttonSignIn);
@@ -49,6 +48,7 @@ namespace TestToDo1.iOS.Views
             _buttonNewUser = new UIButton(UIButtonType.System);
             _buttonNewUser.SetTitle("REGISTRATION", UIControlState.Normal);
             _buttonNewUser.Layer.CornerRadius = 5;
+            _buttonNewUser.Layer.BorderWidth = 2;
             _buttonNewUser.BackgroundColor = UIColor.Blue;
             _buttonNewUser.SetTitleColor(UIColor.White, UIControlState.Normal);
             Add(_buttonNewUser);
@@ -58,7 +58,6 @@ namespace TestToDo1.iOS.Views
             set.Bind(_buttonNewUser).To(vm => vm.RegistrationCommand);
 
             set.Apply();
-
 
             //conastraint
             View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();

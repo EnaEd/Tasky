@@ -45,7 +45,7 @@ namespace TestToDo1.iOS.Views
             RefreshAsync();
             AddRefreshControl();
             _table.AddSubview(_refresh);
-            var _source = new EditTableViewSource(ViewModel, _table, "TitleText TaskName");
+            var _source = new EditTableViewSource(ViewModel, _table, "TitleText TaskName + ContactPhone");
             _table.Source = _source;
             Add(_table);
 

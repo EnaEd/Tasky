@@ -8,6 +8,8 @@ using Cirrious.FluentLayouts.Touch;
 using System.Linq;
 using System.IO;
 using MvvmCross.Platform;
+using CoreGraphics;
+
 
 namespace TestToDo1.iOS.Views
 {
@@ -29,7 +31,7 @@ namespace TestToDo1.iOS.Views
         {            
             base.ViewDidLoad();
 
-            View.BackgroundColor = UIColor.FromRGB(0, 153, 204);
+            View.BackgroundColor = UIColor.FromRGB(77, 210, 255);
 
             //save user
             _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "ToDoUser.txt");
@@ -61,6 +63,10 @@ namespace TestToDo1.iOS.Views
             _home = new UIButton();
             _home.SetTitle("Task List", UIControlState.Normal);
             _home.SetTitleColor(UIColor.Black,UIControlState.Normal);
+            _home.TitleLabel.ShadowOffset = new CGSize(width: 0, height: 0.1);
+            _home.TitleLabel.Layer.ShadowOpacity = 1;
+            _home.TitleLabel.Layer.ShadowRadius = 5;
+            _home.TitleLabel.Layer.MasksToBounds = false;
             _home.SetImage(UIImage.FromFile("Image/todoIOS.png"), UIControlState.Normal);
             _home.TouchUpInside += delegate { File.Delete(_filePath);
                                               ViewModel.GoHome();
@@ -71,6 +77,10 @@ namespace TestToDo1.iOS.Views
             _logOff = new UIButton();
             _logOff.SetTitle("LogOff", UIControlState.Normal);
             _logOff.SetTitleColor(UIColor.Black, UIControlState.Normal);
+            _logOff.TitleLabel.ShadowOffset = new CGSize(width: 0, height: 0.1);
+            _logOff.TitleLabel.Layer.ShadowOpacity = 1;
+            _logOff.TitleLabel.Layer.ShadowRadius = 5;
+            _logOff.TitleLabel.Layer.MasksToBounds = false;
             _logOff.SetImage(UIImage.FromFile("Image/logoffIOS.png"), UIControlState.Normal);
             _logOff.TouchUpInside += delegate{  File.Delete(_filePath);
                                                 ViewModel.DoLogOff();

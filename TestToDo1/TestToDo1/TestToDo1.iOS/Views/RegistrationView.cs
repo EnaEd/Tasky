@@ -59,6 +59,7 @@ namespace TestToDo1.iOS.Views
             _textUserName = new UITextField();
             _textUserName.Placeholder = "Login";
             _textUserName.Layer.CornerRadius = 5;
+            _textUserName.Layer.BorderWidth = 2;
             _textUserName.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserName.ShouldReturn = (textField) => {
                 textField.ResignFirstResponder();
@@ -69,6 +70,7 @@ namespace TestToDo1.iOS.Views
             _textUserPassword = new UITextField();
             _textUserPassword.Placeholder = "Password";
             _textUserPassword.Layer.CornerRadius = 5;
+            _textUserPassword.Layer.BorderWidth = 2;
             _textUserPassword.SecureTextEntry = true;
             _textUserPassword.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserPassword.ShouldReturn = (textField) => {
@@ -80,6 +82,7 @@ namespace TestToDo1.iOS.Views
             _textUserPasswordRepeat = new UITextField();
             _textUserPasswordRepeat.Placeholder = "Password repeat";
             _textUserPasswordRepeat.Layer.CornerRadius = 5;
+            _textUserPasswordRepeat.Layer.BorderWidth = 2;
             _textUserPasswordRepeat.SecureTextEntry = true;
             _textUserPasswordRepeat.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserPasswordRepeat.ShouldReturn = (textField) => {

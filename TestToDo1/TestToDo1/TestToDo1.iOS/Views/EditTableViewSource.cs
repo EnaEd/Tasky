@@ -15,7 +15,7 @@ namespace TestToDo1.iOS.Views
         {
             _mainViewModel = viewModel;
         }
-        
+
         public override bool CanEditRow(UITableView tableView, NSIndexPath indexPath)
         {
             return true;
