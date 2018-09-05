@@ -64,11 +64,11 @@ namespace TestToDo1.Core.ViewModels
             _qualityPercent = 90;
 
             //for SQLite using
-            TempListItemsSQL = new List<Item>(_itemRepository.Get(SignViewModel.UserTemp.Id));
+            TempListItemsSQL = new List<Item>(_itemRepository.Get(SignViewModel.UserCurrent.Id));
 
             //for photo on drawerLayout
-            UserImage = SignViewModel.UserTemp.UserImage;
-            UserLogin = SignViewModel.UserTemp.UserLogin;
+            UserImage = SignViewModel.UserCurrent.UserImage;
+            UserLogin = SignViewModel.UserCurrent.UserLogin;
         }
 
         private MvxCommand _goToItem;
@@ -132,8 +132,8 @@ namespace TestToDo1.Core.ViewModels
             stream.CopyTo(memoryStream);
 
             //update user photo
-            SignViewModel.UserTemp.UserImage = memoryStream.ToArray();
-            Mvx.Resolve<IUserRepository>().Save(SignViewModel.UserTemp);
+            SignViewModel.UserCurrent.UserImage = memoryStream.ToArray();
+            Mvx.Resolve<IUserRepository>().Save(SignViewModel.UserCurrent);
             ShowViewModel<MainViewModel>();
         }
 

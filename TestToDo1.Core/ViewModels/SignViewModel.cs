@@ -21,7 +21,8 @@ namespace TestToDo1.Core.ViewModels
             }
         }
 
-        public static User UserTemp { get; set; }
+        //rename
+        public static User UserCurrent { get; set; }
 
         private string _userLogin;
         public string UserLogin
@@ -63,7 +64,7 @@ namespace TestToDo1.Core.ViewModels
         {
             Error = string.Empty;
             _userRepository = userRepository;
-            UserTemp = new User();
+            UserCurrent = new User();
         }
 
         private MvxCommand _signCommand;
@@ -81,15 +82,14 @@ namespace TestToDo1.Core.ViewModels
                 Error = "Fields Login and Password must have a value";
                 return;
             }
-            UserTemp.UserLogin = this.UserLogin;
-            UserTemp.UserPassword = this.UserPassword;
+            UserCurrent.UserLogin = this.UserLogin;
+            UserCurrent.UserPassword = this.UserPassword;
             User tempUser = _userRepository.GetUserByData(UserLogin,UserPassword);
 
             if (tempUser is User)
             {
-                UserTemp = tempUser;
-                UserTemp.IsLogged = true;
-                _userRepository.Save(UserTemp);
+                UserCurrent = tempUser;
+                _userRepository.Save(UserCurrent);
                 ShowViewModel<MainViewModel>();
                 return;
             }

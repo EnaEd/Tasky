@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using UIKit;
+﻿using UIKit;
 using Foundation;
 using MvvmCross.iOS.Views;
 using MvvmCross.Binding.BindingContext;
@@ -7,6 +6,8 @@ using TestToDo1.Core.ViewModels;
 using MvvmCross.iOS.Support.SidePanels;
 using Cirrious.FluentLayouts.Touch;
 using System.Linq;
+using System.IO;
+using MvvmCross.Platform;
 
 namespace TestToDo1.iOS.Views
 {
@@ -22,13 +23,18 @@ namespace TestToDo1.iOS.Views
         private UIButton _imageButton;
         private UIView _contentConteiner;
         private UIScrollView _scrollView;
-        private UIImage _imageTemp;
-        
+        private string _filePath;
+
         public override void ViewDidLoad()
         {            
             base.ViewDidLoad();
 
-            View.BackgroundColor = UIColor.White;
+            View.BackgroundColor = UIColor.FromRGB(0, 153, 204);
+
+            //save user
+            _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "ToDoUser.txt");
+            File.WriteAllText(_filePath, $"{SignViewModel.UserCurrent.UserLogin}`" +
+                                        $"{SignViewModel.UserCurrent.UserPassword}");
 
             _contentConteiner = new UIView();
             _scrollView = new UIScrollView();
@@ -37,6 +43,7 @@ namespace TestToDo1.iOS.Views
 
             _titleView = new UIView();
             _titleView.BackgroundColor = UIColor.FromRGB(245, 245, 239);
+            _titleView.Layer.CornerRadius = 10;
             _contentConteiner.AddSubview(_titleView);
 
             _userImage = new UIImageView();
@@ -53,19 +60,25 @@ namespace TestToDo1.iOS.Views
 
             _home = new UIButton();
             _home.SetTitle("Task List", UIControlState.Normal);
-            _home.SetTitleColor(UIColor.Blue,UIControlState.Normal);
+            _home.SetTitleColor(UIColor.Black,UIControlState.Normal);
             _home.SetImage(UIImage.FromFile("Image/todoIOS.png"), UIControlState.Normal);
+            _home.TouchUpInside += delegate { File.Delete(_filePath);
+                                              ViewModel.GoHome();
+                                              Mvx.Resolve<IMvxSideMenu>().Close();
+                                            };
             _contentConteiner.AddSubview(_home);
 
             _logOff = new UIButton();
             _logOff.SetTitle("LogOff", UIControlState.Normal);
-            _logOff.SetTitleColor(UIColor.Blue, UIControlState.Normal);
+            _logOff.SetTitleColor(UIColor.Black, UIControlState.Normal);
             _logOff.SetImage(UIImage.FromFile("Image/logoffIOS.png"), UIControlState.Normal);
+            _logOff.TouchUpInside += delegate{  File.Delete(_filePath);
+                                                ViewModel.DoLogOff();
+                                                Mvx.Resolve<IMvxSideMenu>().Close();
+            };
             _contentConteiner.AddSubview(_logOff);
 
             var set = this.CreateBindingSet<LeftPanelView,LeftPanelViewModel>();
-            set.Bind(_home).To(vm => vm.HomeCommand);
-            set.Bind(_logOff).To(vm => vm.LogOffCommand);
             set.Bind(_userImage).For(v => v.Image).To(vm => vm.UserImage).WithConversion("ByteToUIImage");
             set.Bind(_userLogin).To(vm => vm.UserLogin);
             set.Apply();
@@ -88,9 +101,9 @@ namespace TestToDo1.iOS.Views
 
             _contentConteiner.AddConstraints(
                 _titleView.WithSameCenterX(_contentConteiner),
-                _titleView.AtTopOf(_contentConteiner),
-                _titleView.Height().EqualTo(240),
-                _titleView.Width().EqualTo(300),
+                _titleView.AtTopOf(_contentConteiner).Plus(20),
+                _titleView.Height().EqualTo(250),
+                _titleView.WithSameWidth(_contentConteiner).Minus(10),
 
                 _userImage.WithSameCenterX(_titleView),
                 _userImage.WithSameCenterY(_titleView),
@@ -103,7 +116,7 @@ namespace TestToDo1.iOS.Views
                 _imageButton.WithSameCenterY(_userImage),
 
                 _userLogin.Below(_userImage,10),
-                _userLogin.WithSameWidth(_contentConteiner).Minus(40),
+                _userLogin.WithSameCenterX(_userImage),
 
                 _home.Below(_userLogin,50),
                 _home.AtLeftOf(_contentConteiner,5),
@@ -111,12 +124,12 @@ namespace TestToDo1.iOS.Views
                 _logOff.Below(_home, 5),
                 _logOff.AtLeftOf(_contentConteiner,5)
             );
+            
             // very important to make scrolling work
             var bottomViewConstraint = _contentConteiner.Subviews.Last()
                 .AtBottomOf(_contentConteiner).Minus(20);
             _contentConteiner.AddConstraints(bottomViewConstraint);
         }
-
 
         private void ChoosePicture(object sender, System.EventArgs e)
         {

@@ -3,17 +3,11 @@ using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
 using Android.Support.V7.Widget.Helper;
-using Android.Views;
-using Android.Widget;
-using MvvmCross.Binding.Droid.Views;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
-using Refractored.Fab;
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using TestToDo1.Core.IRepository;
 using TestToDo1.Core.ViewModels;
 using TestToDo1.Droid.Helper;
 
@@ -27,7 +21,6 @@ namespace TestToDo1.Droid.Views
         private DrawerLayout drawerLayout;
         private MvxRecyclerView recyclerView;
         private ItemTouchHelper itemTouchHelper;
-        private string _path;
         private string _filePath;
 
         protected override void OnCreate(Bundle bundle)
@@ -37,10 +30,9 @@ namespace TestToDo1.Droid.Views
             SetContentView(Resource.Layout.MainView);
 
             //save user
-            _path = Application.Context.FilesDir.Path;
-            _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),"User.txt");
-            File.WriteAllText(_filePath,$"{SignViewModel.UserTemp.UserLogin}." +
-                                        $"{SignViewModel.UserTemp.UserPassword}");
+            _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),"ToDoUser.txt");
+            File.WriteAllText(_filePath,$"{SignViewModel.UserCurrent.UserLogin}." +
+                                        $"{SignViewModel.UserCurrent.UserPassword}");
 
             recyclerView = FindViewById<MvxRecyclerView>(Resource.Id.taskList);
             itemTouchHelper = new ItemTouchHelper(new Swipe2DismissTouchHelperCallback(this));

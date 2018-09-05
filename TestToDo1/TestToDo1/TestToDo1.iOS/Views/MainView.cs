@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using UIKit;
+﻿using UIKit;
 using Foundation;
 using MvvmCross.iOS.Views;
 using MvvmCross.Binding.BindingContext;
@@ -7,16 +6,18 @@ using TestToDo1.Core.ViewModels;
 using System.Threading.Tasks;
 using MvvmCross.iOS.Support.SidePanels;
 using Cirrious.FluentLayouts.Touch;
+using System.IO;
 
 namespace TestToDo1.iOS.Views
 {
     [Register("MainView")]
-    [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ResetRoot, true,MvxSplitViewBehaviour.Master)]
+    [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ActivePanel, true)]
     public class MainView : MvxViewController<MainViewModel>
     {
         private MvxUIRefreshControl _refresh;
         private UITableView _table;
         private bool _isLoad;
+        private string _filePath;
 
         public MainView()
         {
@@ -24,11 +25,16 @@ namespace TestToDo1.iOS.Views
         }
         public override void ViewDidLoad()
         {
-            View = new UIView() { BackgroundColor=UIColor.White};
+            View = new UIView() { BackgroundColor= UIColor.White};
 
             base.ViewDidLoad();
 
             ViewModel.Show();
+
+            //save user
+            _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "ToDoUser.txt");
+            File.WriteAllText(_filePath, $"{SignViewModel.UserCurrent.UserLogin}`" +
+                                        $"{SignViewModel.UserCurrent.UserPassword}");
 
             var _addBarButton = new UIBarButtonItem(UIBarButtonSystemItem.Add);
             _addBarButton.Title = string.Empty;

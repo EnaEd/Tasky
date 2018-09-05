@@ -9,11 +9,12 @@ using Cirrious.FluentLayouts.Touch;
 namespace TestToDo1.iOS.Views
 {
     [Register("LogInView")]
-    [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ActivePanel, true)]
-    public class LogInView : MvxViewController
+    [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ResetRoot, true)]
+    public class LogInView : MvxViewController<LogInViewModel>
     {
         private UIButton _buttonSignIn;
         private UIButton _buttonNewUser;
+        private UIImageView _presentImage;
 
         public LogInView()
         {
@@ -23,8 +24,7 @@ namespace TestToDo1.iOS.Views
             base.ViewDidLoad();
 
 
-
-            View.BackgroundColor = UIColor.White;
+            View.BackgroundColor = UIColor.FromRGB(204, 242, 255);
 
             var _BackBarButton = new UIBarButtonItem();
             _BackBarButton.Title = string.Empty;
@@ -33,6 +33,11 @@ namespace TestToDo1.iOS.Views
             var _MenuBarButton = new UIBarButtonItem();
             _BackBarButton.Title =string.Empty;
             NavigationItem.LeftBarButtonItem = _BackBarButton;
+
+            _presentImage = new UIImageView();
+            _presentImage.Image = UIImage.FromFile("Image/todo-list.png");
+            Add(_presentImage);
+
 
             _buttonSignIn = new UIButton(UIButtonType.System);
             _buttonSignIn.SetTitle("SIGNIN", UIControlState.Normal);
@@ -58,6 +63,9 @@ namespace TestToDo1.iOS.Views
             //conastraint
             View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
+            View.AddConstraints(_presentImage.FullWidthOf(View));
+            View.AddConstraints(_presentImage.FullHeightOf(View,61));
+
             View.AddConstraints(_buttonSignIn.FullWidthOf(View, 25));
             View.AddConstraints(_buttonSignIn.WithSameCenterY(View));
 
@@ -80,6 +88,7 @@ namespace TestToDo1.iOS.Views
     void HandleSwipe(UIPanGestureRecognizer sender)
         {
             //You don't need implement any code here.
+            
         }
     }
 }

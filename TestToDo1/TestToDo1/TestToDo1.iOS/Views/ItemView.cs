@@ -37,7 +37,7 @@ namespace TestToDo1.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            View.BackgroundColor = UIColor.White;
+            View.BackgroundColor = UIColor.FromRGB(204, 242, 255);
 
             var border = new CALayer();
             nfloat width = 2;

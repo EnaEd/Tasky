@@ -23,7 +23,7 @@ namespace TestToDo1.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            View.BackgroundColor = UIColor.White;
+            View.BackgroundColor = UIColor.FromRGB(204, 242, 255);
 
             var _BackBarButton = new UIBarButtonItem();
             _BackBarButton.Title = string.Empty;
@@ -39,6 +39,7 @@ namespace TestToDo1.iOS.Views
 
             _textUserLogin = new UITextField();
             _textUserLogin.Placeholder = "Login";
+            _textUserLogin.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserLogin.ShouldReturn = (textField) => {
                 textField.ResignFirstResponder();
                 return true;
@@ -48,6 +49,7 @@ namespace TestToDo1.iOS.Views
             _textUserPassword = new UITextField();
             _textUserPassword.Placeholder = "Password";
             _textUserPassword.SecureTextEntry = true;
+            _textUserPassword.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserPassword.ShouldReturn = (textField) => {
                 textField.ResignFirstResponder();
                 return true;

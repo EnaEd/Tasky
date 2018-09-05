@@ -1,11 +1,8 @@
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using System.Collections.Generic;
 using System.Windows.Input;
-using TestToDo1.Core.Models;
-using TestToDo1.Core.IRepository;
 using MvvmCross.Plugins.PictureChooser;
 using System.IO;
+using MvvmCross.Platform;
 
 namespace TestToDo1.Core.ViewModels
 {
@@ -32,8 +29,8 @@ namespace TestToDo1.Core.ViewModels
         public LeftPanelViewModel(IMvxPictureChooserTask pictureChooserTask)
         {
                 //for photo on drawerLayout
-                UserImage = SignViewModel.UserTemp.UserImage;
-                UserLogin = SignViewModel.UserTemp.UserLogin;
+                UserImage = SignViewModel.UserCurrent.UserImage;
+                UserLogin = SignViewModel.UserCurrent.UserLogin;
 
             _pictureChooserTask = pictureChooserTask;
             _maxPixel = 400;
@@ -48,7 +45,7 @@ namespace TestToDo1.Core.ViewModels
                 return _homeCommand = _homeCommand ?? new MvxCommand(GoHome);
             }
         }
-        private void GoHome()
+        public void GoHome()
         {
             ShowViewModel<MainViewModel>();
         }
@@ -61,7 +58,7 @@ namespace TestToDo1.Core.ViewModels
                 return _logOffCommand = _logOffCommand ?? new MvxCommand(DoLogOff);
             }
         }
-        private void DoLogOff()
+        public void DoLogOff()
         {
             ShowViewModel<LogInViewModel>();
         }
@@ -101,7 +98,8 @@ namespace TestToDo1.Core.ViewModels
             var memoryStream = new MemoryStream();
             stream.CopyTo(memoryStream);
             UserImage = memoryStream.ToArray();
-            SignViewModel.UserTemp.UserImage = UserImage;
+            SignViewModel.UserCurrent.UserImage = UserImage;
         }
+
     }
 }

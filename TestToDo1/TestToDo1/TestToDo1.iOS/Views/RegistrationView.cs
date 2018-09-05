@@ -11,7 +11,7 @@ using System.Linq;
 namespace TestToDo1.iOS.Views
 {
     [Register("RegistrationView")]
-    [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ResetRoot, true)]
+    [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ActivePanel, true)]
     public class RegistrationView : MvxViewController<RegistrationViewModel>
     {
         private UIButton _buttonCreate;
@@ -31,7 +31,7 @@ namespace TestToDo1.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            View.BackgroundColor = UIColor.White;
+            View.BackgroundColor = UIColor.FromRGB(204, 242, 255);
 
             _contentConteiner = new UIView();
             _scrollView = new UIScrollView();
@@ -59,6 +59,7 @@ namespace TestToDo1.iOS.Views
             _textUserName = new UITextField();
             _textUserName.Placeholder = "Login";
             _textUserName.Layer.CornerRadius = 5;
+            _textUserName.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserName.ShouldReturn = (textField) => {
                 textField.ResignFirstResponder();
                 return true;
@@ -69,6 +70,7 @@ namespace TestToDo1.iOS.Views
             _textUserPassword.Placeholder = "Password";
             _textUserPassword.Layer.CornerRadius = 5;
             _textUserPassword.SecureTextEntry = true;
+            _textUserPassword.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserPassword.ShouldReturn = (textField) => {
                 textField.ResignFirstResponder();
                 return true;
@@ -79,6 +81,7 @@ namespace TestToDo1.iOS.Views
             _textUserPasswordRepeat.Placeholder = "Password repeat";
             _textUserPasswordRepeat.Layer.CornerRadius = 5;
             _textUserPasswordRepeat.SecureTextEntry = true;
+            _textUserPasswordRepeat.BorderStyle = UITextBorderStyle.RoundedRect;
             _textUserPasswordRepeat.ShouldReturn = (textField) => {
                 textField.ResignFirstResponder();
                 return true;
@@ -142,15 +145,15 @@ namespace TestToDo1.iOS.Views
                 _labelError.Height().EqualTo(13),
 
                 _textUserName.AtLeftOf(_contentConteiner,25),
-                _textUserName.WithSameWidth(_contentConteiner).Minus(100),
+                _textUserName.WithSameWidth(_contentConteiner).Minus(135),
                 _textUserName.Below(_labelError,60),
 
                 _textUserPassword.AtLeftOf(_contentConteiner, 25),
-                _textUserPassword.WithSameWidth(_contentConteiner).Minus(130),
+                _textUserPassword.WithSameWidth(_contentConteiner).Minus(135),
                 _textUserPassword.Below(_textUserName, 40),
 
                  _textUserPasswordRepeat.AtLeftOf(_contentConteiner, 25),
-                _textUserPasswordRepeat.WithSameWidth(_contentConteiner).Minus(130),
+                _textUserPasswordRepeat.WithSameWidth(_contentConteiner).Minus(135),
                 _textUserPasswordRepeat.Below(_textUserPassword, 40),
 
                 _imageUserPhoto.AtRightOf(_contentConteiner,25),

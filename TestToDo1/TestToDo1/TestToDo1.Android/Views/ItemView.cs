@@ -17,7 +17,6 @@ namespace TestToDo1.Droid.Views
         private Button _buttonAdd;
         private NavigationView navigationView;
         private DrawerLayout drawerLayout;
-        private string _path;
         private string _filePath;
 
         protected override void OnCreate(Bundle bundle)
@@ -27,10 +26,9 @@ namespace TestToDo1.Droid.Views
             SetContentView(Resource.Layout.ItemView);
 
             //save user
-            _path = Application.Context.FilesDir.Path;
-            _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "User.txt");
-            File.WriteAllText(_filePath, $"{SignViewModel.UserTemp.UserLogin}." +
-                                        $"{SignViewModel.UserTemp.UserPassword}");
+            _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "ToDoUser.txt");
+            File.WriteAllText(_filePath, $"{SignViewModel.UserCurrent.UserLogin}." +
+                                        $"{SignViewModel.UserCurrent.UserPassword}");
 
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id._drawerItemView);
 

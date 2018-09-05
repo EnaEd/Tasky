@@ -147,10 +147,10 @@ namespace TestToDo1.Core.ViewModels
 
             if (!string.IsNullOrEmpty(UserLogin))
             {
-                SignViewModel.UserTemp = new User();
-                SignViewModel.UserTemp.UserLogin = this.UserLogin;
-                SignViewModel.UserTemp.UserPassword = this.UserPassword;
-                SignViewModel.UserTemp.UserImage = UserImage;
+                SignViewModel.UserCurrent = new User();
+                SignViewModel.UserCurrent.UserLogin = this.UserLogin;
+                SignViewModel.UserCurrent.UserPassword = this.UserPassword;
+                SignViewModel.UserCurrent.UserImage = UserImage;
                 if (_userRepository.GetUserByData(UserLogin,UserPassword) is User)
                 {
                     Error = "This user exists";
@@ -158,8 +158,6 @@ namespace TestToDo1.Core.ViewModels
                     UserPasswordRepeat = String.Empty;
                     return;
                 }
-                  SignViewModel.UserTemp.IsLogged = true;
-                  _userRepository.Save(SignViewModel.UserTemp);
                   ShowViewModel<MainViewModel>();
                     return;
             }

@@ -13,7 +13,7 @@ namespace TestToDo1.Core
     {
         public void Start(object hint = null)
         {
-            if (SignViewModel.UserTemp is User)
+            if (SignViewModel.UserCurrent != null)
             {
                 ShowViewModel<MainViewModel>();
                 return;

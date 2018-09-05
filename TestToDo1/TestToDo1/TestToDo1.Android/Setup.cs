@@ -6,7 +6,6 @@ using MvvmCross.Platform;
 using TestToDo1.Core.IRepository;
 using TestToDo1.Droid.Services;
 using System.IO;
-using Android.App;
 using TestToDo1.Core.ViewModels;
 
 namespace TestToDo1.Droid
@@ -33,7 +32,7 @@ namespace TestToDo1.Droid
                 int flagStringSplitter = user.IndexOf('.');
                 string userLogin = user.Substring(0, flagStringSplitter);
                 string userPassword = user.Substring(++flagStringSplitter);
-                SignViewModel.UserTemp = Mvx.Resolve<IUserRepository>().GetUserByData(userLogin, userPassword);
+                SignViewModel.UserCurrent = Mvx.Resolve<IUserRepository>().GetUserByData(userLogin, userPassword);
             }
             return new Core.App();
         }

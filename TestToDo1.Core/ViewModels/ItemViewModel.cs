@@ -114,8 +114,8 @@ namespace TestToDo1.Core.ViewModels
         public ItemViewModel(IMvxPhoneCallTask phoneCallTask, IMvxPictureChooserTask pictureChooserTask, IItemRepository itemRepository,IUserRepository userRepository)
         {
             //for photo on drawerLayout
-            UserImage = SignViewModel.UserTemp.UserImage;
-            UserLogin = SignViewModel.UserTemp.UserLogin;
+            UserImage = SignViewModel.UserCurrent.UserImage;
+            UserLogin = SignViewModel.UserCurrent.UserLogin;
 
             _phoneCallTask = phoneCallTask;
             _pictureChooserTask = pictureChooserTask;
@@ -168,7 +168,7 @@ namespace TestToDo1.Core.ViewModels
                 Item.TaskDone = this.TaskDone;
                 Item.ContactName = this.ContactName;
                 Item.ContactPhone = this.ContactPhone;
-                Item.UserId = SignViewModel.UserTemp.Id;
+                Item.UserId = SignViewModel.UserCurrent.Id;
                 _itemRepository.Save(Item);
                 GoBack();
                 return;
@@ -283,8 +283,8 @@ namespace TestToDo1.Core.ViewModels
             var memoryStream = new MemoryStream();
             stream.CopyTo(memoryStream);
             //update user photo
-            SignViewModel.UserTemp.UserImage = memoryStream.ToArray();
-            _userRepository.Save(SignViewModel.UserTemp);
+            SignViewModel.UserCurrent.UserImage = memoryStream.ToArray();
+            _userRepository.Save(SignViewModel.UserCurrent);
             ShowViewModel<ItemViewModel>();
         }
 

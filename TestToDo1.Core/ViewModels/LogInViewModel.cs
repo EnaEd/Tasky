@@ -1,6 +1,5 @@
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Plugins.PictureChooser;
 
 namespace TestToDo1.Core.ViewModels
 {
@@ -31,6 +30,5 @@ namespace TestToDo1.Core.ViewModels
         {
             ShowViewModel<RegistrationViewModel>();
         }
-       
     }     
 }

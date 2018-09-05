@@ -10,7 +10,5 @@ namespace TestToDo1.Core.Models
         public string UserPassword { get; set; }
 
         public byte[] UserImage { get; set; }
-
-        public bool IsLogged { get; set; }
     }
 }

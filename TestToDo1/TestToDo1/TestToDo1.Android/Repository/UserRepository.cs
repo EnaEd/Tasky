@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
 using SQLite;
 using TestToDo1.Core.Models;
@@ -53,13 +50,6 @@ namespace TestToDo1.Droid.Services
         {
             User result = (_database.Table<User>()
                                 .FirstOrDefault(item =>item.UserLogin.Equals(login)&& item.UserPassword.Equals(password)));
-            return result;
-        }
-
-        public User GetLoggedUser()
-        {
-            User result= (_database.Table<User>()
-                                .FirstOrDefault(item => item.IsLogged.Equals(true)));
             return result;
         }
     }

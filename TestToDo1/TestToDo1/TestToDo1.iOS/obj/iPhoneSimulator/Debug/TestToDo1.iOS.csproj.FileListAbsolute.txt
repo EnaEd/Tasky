@@ -45,10 +45,13 @@ C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.i
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
-C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\optimized\Image\PhotoIOS.png
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\optimized\
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\TestToDo1.iOS.csprojAssemblyReference.cache
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\TestToDo1.iOS.csproj.CoreCompileInputs.cache
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\TestToDo1.iOS.csproj.CopyComplete
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\TestToDo1.iOS.exe
 C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\TestToDo1.iOS.pdb
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\optimized\Image\logoffIOS.png
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\optimized\Image\todoIOS.png
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\optimized\Image\todo-list.png
+C:\Users\Anuitex-102\source\repos\TestToDo1.Core\TestToDo1\TestToDo1\TestToDo1.iOS\obj\iPhoneSimulator\Debug\optimized\Image\todoList.png
