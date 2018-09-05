@@ -21,6 +21,20 @@ namespace TestToDo1.Core.ViewModels
         private int _maxPixel;
         private int _qualityPercent;
 
+        private string _error;
+        public string Error
+        {
+            get
+            {
+                return _error;
+            }
+            set
+            {
+                _error = value;
+                RaisePropertyChanged(() => Error);
+            }
+        }
+
         public byte[] UserImage { get; set; }
         public string UserLogin { get; set; }
 
@@ -108,6 +122,8 @@ namespace TestToDo1.Core.ViewModels
             _itemRepository = itemRepository;
             _userRepository = userRepository;
 
+            Error = string.Empty;
+
             _maxPixel = 400;
             _qualityPercent = 90;
         }
@@ -153,6 +169,7 @@ namespace TestToDo1.Core.ViewModels
                 Item.ContactPhone = this.ContactPhone;
                 Item.UserId = SignViewModel.UserTemp.Id;
                 _itemRepository.Save(Item);
+                GoBack();
                 #endregion
 
                 #region use observsableCollection
@@ -170,7 +187,7 @@ namespace TestToDo1.Core.ViewModels
                 //ListViewItem.ListItems.Add(Item);
                 #endregion
             }
-            GoBack();
+            Error = "Please enter task";
         }
 
         private MvxCommand _deleteItem;
@@ -230,7 +247,8 @@ namespace TestToDo1.Core.ViewModels
             {
                 ContactPhone = "";
             }
-                _phoneCallTask.MakePhoneCall("", ContactPhone); 
+            
+            _phoneCallTask.MakePhoneCall("",ContactPhone); 
         }
 
         private MvxCommand _addPicture;

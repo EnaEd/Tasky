@@ -2,13 +2,19 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto">
+  <group android:checkableBehavior="single"
+     android:id="@+id/group_TaskList">
     <item
 android:id="@+id/nav_home"
-android:title="Home"/>
-  <item
-android:id="@+id/nav_about"
-android:title="About"/>
+android:title="Task List"
+android:icon = "@drawable/todo" />
+  </group>
+  <group android:checkableBehavior="single"
+     android:id="@+id/group_logOff">
     <item
 android:id="@+id/nav_logOff"
-android:title="Log off"/>
+android:title="Log off"
+android:icon = "@drawable/logoff"/>
+  </group>
+  <group android:checkableBehavior="single"></group>
 </menu>

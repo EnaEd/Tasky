@@ -9,7 +9,7 @@ namespace TestToDo1.iOS.Views
     //swipe delete
     public class EditTableViewSource : MvxStandardTableViewSource
     {
-        private IRemove _mainViewModel;
+        public IRemove _mainViewModel;
 
         public EditTableViewSource(IRemove viewModel, UITableView tableView, string bindingText) : base(tableView, bindingText)
         {
@@ -26,7 +26,7 @@ namespace TestToDo1.iOS.Views
             switch (editingStyle)
             {
                 case UITableViewCellEditingStyle.Delete:
-                    _mainViewModel.RemoveCommand.Execute(indexPath.Row);
+                     _mainViewModel.RemoveCommand.Execute(indexPath.Row);
                     break;
                 case UITableViewCellEditingStyle.None:
                     break;
@@ -39,7 +39,6 @@ namespace TestToDo1.iOS.Views
             {
                 return UITableViewCellEditingStyle.Delete;
             }
-
             return UITableViewCellEditingStyle.None;
         }
 

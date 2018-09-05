@@ -6,7 +6,7 @@ using MvvmCross.Binding.BindingContext;
 using TestToDo1.Core.ViewModels;
 using MvvmCross.iOS.Support.SidePanels;
 using Cirrious.FluentLayouts.Touch;
-using CoreGraphics;
+using System.Linq;
 
 namespace TestToDo1.iOS.Views
 {
@@ -17,48 +17,51 @@ namespace TestToDo1.iOS.Views
         private UIImageView _userImage;
         private UILabel _userLogin;
         private UIButton _home;
-        private UIButton _about;
         private UIButton _logOff;
         private UIView _titleView;
         private UIButton _imageButton;
-
+        private UIView _contentConteiner;
+        private UIScrollView _scrollView;
+        private UIImage _imageTemp;
+        
         public override void ViewDidLoad()
         {            
             base.ViewDidLoad();
 
             View.BackgroundColor = UIColor.White;
 
+            _contentConteiner = new UIView();
+            _scrollView = new UIScrollView();
+            _scrollView.AddSubview(_contentConteiner);
+            Add(_scrollView);
+
             _titleView = new UIView();
-            _titleView.BackgroundColor = UIColor.FromRGB(144, 238, 144);
-            Add(_titleView);
+            _titleView.BackgroundColor = UIColor.FromRGB(245, 245, 239);
+            _contentConteiner.AddSubview(_titleView);
 
             _userImage = new UIImageView();
             _userImage.BackgroundColor = UIColor.LightGray;
-            Add(_userImage);
+            _contentConteiner.AddSubview(_userImage);
 
-            _imageButton=new UIButton();
+            _imageButton =new UIButton();
             _imageButton.BackgroundColor = UIColor.Clear;
             _imageButton.TouchUpInside += ChoosePicture;
-            Add(_imageButton);
+            _contentConteiner.AddSubview(_imageButton);
 
             _userLogin = new UILabel();
-            Add(_userLogin);
+            _contentConteiner.AddSubview(_userLogin);
 
             _home = new UIButton();
-            _home.SetTitle("Home", UIControlState.Normal);
+            _home.SetTitle("Task List", UIControlState.Normal);
             _home.SetTitleColor(UIColor.Blue,UIControlState.Normal);
-            Add(_home);
-
-            _about = new UIButton();
-            _about.SetTitle("About", UIControlState.Normal);
-            _about.SetTitleColor(UIColor.Blue, UIControlState.Normal);
-            _about.TouchUpInside += TellAboutUs;
-            Add(_about);
+            _home.SetImage(UIImage.FromFile("Image/todoIOS.png"), UIControlState.Normal);
+            _contentConteiner.AddSubview(_home);
 
             _logOff = new UIButton();
             _logOff.SetTitle("LogOff", UIControlState.Normal);
             _logOff.SetTitleColor(UIColor.Blue, UIControlState.Normal);
-            Add(_logOff);
+            _logOff.SetImage(UIImage.FromFile("Image/logoffIOS.png"), UIControlState.Normal);
+            _contentConteiner.AddSubview(_logOff);
 
             var set = this.CreateBindingSet<LeftPanelView,LeftPanelViewModel>();
             set.Bind(_home).To(vm => vm.HomeCommand);
@@ -67,12 +70,25 @@ namespace TestToDo1.iOS.Views
             set.Bind(_userLogin).To(vm => vm.UserLogin);
             set.Apply();
 
-        //conastraint
-        View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+            //conastraint
+            _scrollView.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+            _scrollView.AddConstraints(_contentConteiner.FullWidthOf(_scrollView));
+            _scrollView.AddConstraints(_contentConteiner.FullHeightOf(_scrollView));
 
+            View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+
+            View.AddConstraints(_scrollView.FullWidthOf(View));
+            View.AddConstraints(_scrollView.FullHeightOf(View));
             View.AddConstraints(
-                _titleView.WithSameCenterX(View),
-                _titleView.WithSameTop(View),
+                _contentConteiner.WithSameWidth(View),
+                _contentConteiner.WithSameHeight(View).SetPriority(UILayoutPriority.DefaultLow)
+            );
+
+            _contentConteiner.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+
+            _contentConteiner.AddConstraints(
+                _titleView.WithSameCenterX(_contentConteiner),
+                _titleView.AtTopOf(_contentConteiner),
                 _titleView.Height().EqualTo(240),
                 _titleView.Width().EqualTo(300),
 
@@ -83,31 +99,24 @@ namespace TestToDo1.iOS.Views
 
                 _imageButton.Height().EqualTo(120),
                 _imageButton.Width().EqualTo(120),
-                _imageButton.WithSameCenterX(_titleView),
-                _imageButton.WithSameCenterY(_titleView),
+                _imageButton.WithSameCenterX(_userImage),
+                _imageButton.WithSameCenterY(_userImage),
 
                 _userLogin.Below(_userImage,10),
-                _userLogin.WithSameCenterX(_userImage).Minus(40),
+                _userLogin.WithSameWidth(_contentConteiner).Minus(40),
 
                 _home.Below(_userLogin,50),
-                _home.WithSameLeft(View).Plus(25),
+                _home.AtLeftOf(_contentConteiner,5),
 
-                _about.Below(_home,25),
-                _about.WithSameLeft(View).Plus(25),
-
-                _logOff.Below(_about, 25),
-                _logOff.WithSameLeft(View).Plus(25)
+                _logOff.Below(_home, 5),
+                _logOff.AtLeftOf(_contentConteiner,5)
             );
+            // very important to make scrolling work
+            var bottomViewConstraint = _contentConteiner.Subviews.Last()
+                .AtBottomOf(_contentConteiner).Minus(20);
+            _contentConteiner.AddConstraints(bottomViewConstraint);
         }
 
-        private void TellAboutUs(object sender, System.EventArgs e)
-        {
-            UIAlertController _alertController = UIAlertController.Create("About", "this app ver 2.0", UIAlertControllerStyle.Alert);
-            _alertController.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, action => {
-                _alertController.Dispose();
-            }));
-            PresentViewController(_alertController, true, null);
-        }
 
         private void ChoosePicture(object sender, System.EventArgs e)
         {

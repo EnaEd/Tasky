@@ -49,21 +49,18 @@ namespace TestToDo1.Droid.Services
             return result;
         }
 
-        public User GetUserByData(string login)
+        public User GetUserByData(string login,string password)
         {
-            User userFind=new User();
-            
-            List<User> result = (_database.Table<User>()
-                                .Where(item=>item.UserLogin.Equals(login))).ToList();
+            User result = (_database.Table<User>()
+                                .FirstOrDefault(item =>item.UserLogin.Equals(login)&& item.UserPassword.Equals(password)));
+            return result;
+        }
 
-            if (result.Count == 0)
-            {
-                return null;
-            }
-
-            userFind = GetById(result[0].Id);
-
-            return userFind;
+        public User GetLoggedUser()
+        {
+            User result= (_database.Table<User>()
+                                .FirstOrDefault(item => item.IsLogged.Equals(true)));
+            return result;
         }
     }
 }

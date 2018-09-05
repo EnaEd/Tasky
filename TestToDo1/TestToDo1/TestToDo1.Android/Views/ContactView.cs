@@ -34,21 +34,20 @@ namespace TestToDo1.Droid.Views
             var cursorPhone = (ICursor)loaderPhone.LoadInBackground();
             if (cursorPhone.MoveToFirst())
             {
-                for(;cursorPhone.MoveToNext();)
+                while (cursorPhone.MoveToNext())
                 {
                     int contactId = cursorPhone.GetColumnIndex(ContactsContract.Contacts.InterfaceConsts.Id);
                     string contactName = cursorPhone.GetString(cursorPhone.GetColumnIndex(
                                                               ContactsContract.Contacts.InterfaceConsts.DisplayNamePrimary));
                     string contactPhone = cursorPhone.GetString(cursorPhone.GetColumnIndex(
                                                               ContactsContract.CommonDataKinds.Phone.Number));
-
                     Contact contact = new Contact();
                     contact.Id = contactId;
                     contact.ContactName = contactName;
                     contact.ContactPhone = contactPhone;
 
                     ViewModel.Contacts.Add(contact);
-                } 
+                }
             }
         }
     }

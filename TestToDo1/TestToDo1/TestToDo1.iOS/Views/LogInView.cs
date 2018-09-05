@@ -12,7 +12,6 @@ namespace TestToDo1.iOS.Views
     [MvxPanelPresentation(MvxPanelEnum.Center, MvxPanelHintType.ResetRoot, true)]
     public class LogInView : MvxViewController
     {
-        private UIToolbar _uIToolbar;
         private UIButton _buttonSignIn;
         private UIButton _buttonNewUser;
 
@@ -28,16 +27,12 @@ namespace TestToDo1.iOS.Views
             View.BackgroundColor = UIColor.White;
 
             var _BackBarButton = new UIBarButtonItem();
-            _BackBarButton.Title = "";
+            _BackBarButton.Title = string.Empty;
             NavigationItem.RightBarButtonItem = _BackBarButton;
 
             var _MenuBarButton = new UIBarButtonItem();
-            _BackBarButton.Title = "";
+            _BackBarButton.Title =string.Empty;
             NavigationItem.LeftBarButtonItem = _BackBarButton;
-
-            _uIToolbar = new UIToolbar();
-            _uIToolbar.BackgroundColor = UIColor.LightGray;
-            Add(_uIToolbar);
 
             _buttonSignIn = new UIButton(UIButtonType.System);
             _buttonSignIn.SetTitle("SIGNIN", UIControlState.Normal);
@@ -63,31 +58,26 @@ namespace TestToDo1.iOS.Views
             //conastraint
             View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
-            View.AddConstraints(
-                _uIToolbar.WithSameCenterX(View),
-                _uIToolbar.WithSameTop(View).Plus(60),
-                _uIToolbar.Width().EqualTo(View.Frame.Width).Minus(0),
+            View.AddConstraints(_buttonSignIn.FullWidthOf(View, 25));
+            View.AddConstraints(_buttonSignIn.WithSameCenterY(View));
 
-                _buttonSignIn.WithSameCenterX(View),
-                _buttonSignIn.WithSameCenterY(View).Minus(100),
-                _buttonNewUser.WithSameCenterX(View),
+            View.AddConstraints(_buttonNewUser.Below(_buttonSignIn, 40));
+            View.AddConstraints(_buttonNewUser.FullWidthOf(View, 25));
 
-                _buttonSignIn.Width().EqualTo(View.Frame.Width).Minus(100),
-                _buttonNewUser.Width().EqualTo(View.Frame.Width).Minus(100),
-
-                _buttonNewUser.Below(_buttonSignIn, 40)
-                );
             //for disable swipe
             CreateGestureRecognizer();
+            
         }
-        void CreateGestureRecognizer()//call this method in the ViewDidLoad override class.
+        //call this method in the ViewDidLoad override class.
+        void CreateGestureRecognizer()
         {
             UIPanGestureRecognizer swipeRecognizer = new UIPanGestureRecognizer();
             swipeRecognizer.AddTarget(() => HandleSwipe(swipeRecognizer));
             View.AddGestureRecognizer(swipeRecognizer);
         }
 
-        void HandleSwipe(UIPanGestureRecognizer sender)
+
+    void HandleSwipe(UIPanGestureRecognizer sender)
         {
             //You don't need implement any code here.
         }

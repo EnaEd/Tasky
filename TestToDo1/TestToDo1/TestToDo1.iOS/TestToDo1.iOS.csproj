@@ -211,7 +211,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppDelegate.cs.txt" />
-    <BundleResource Include="Resources\Image\PhotoIOS.png" />
+    <BundleResource Include="Resources\Image\logoffIOS.png" />
+    <BundleResource Include="Resources\Image\todoIOS.png" />
     <Content Include="ToDo-MvvmCross\_ iOS UI.txt" />
   </ItemGroup>
   <Import Project="..\TestToDo1\TestToDo1.projitems" Label="Shared" />

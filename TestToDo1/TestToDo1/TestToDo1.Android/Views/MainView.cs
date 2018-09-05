@@ -3,9 +3,16 @@ using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
 using Android.Support.V7.Widget.Helper;
+using Android.Views;
+using Android.Widget;
+using MvvmCross.Binding.Droid.Views;
 using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Droid.Views;
+using MvvmCross.Platform;
+using Refractored.Fab;
 using System;
+using System.Threading.Tasks;
+using TestToDo1.Core.IRepository;
 using TestToDo1.Core.ViewModels;
 using TestToDo1.Droid.Helper;
 
@@ -19,14 +26,13 @@ namespace TestToDo1.Droid.Views
         private DrawerLayout drawerLayout;
         private MvxRecyclerView recyclerView;
         private ItemTouchHelper itemTouchHelper;
-        
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.MainView);
 
-            //for swipe to delete
             recyclerView = FindViewById<MvxRecyclerView>(Resource.Id.taskList);
             itemTouchHelper = new ItemTouchHelper(new Swipe2DismissTouchHelperCallback(this));
             itemTouchHelper.AttachToRecyclerView(recyclerView);
@@ -53,29 +59,24 @@ namespace TestToDo1.Droid.Views
         private void NavigationViewClick(object sender, NavigationView.NavigationItemSelectedEventArgs e)
         {
             e.MenuItem.SetChecked(true);
-
+            
             if (e.MenuItem.ItemId == Resource.Id.nav_home)
             {
                 ViewModel.ShowSelf();
             }
             if (e.MenuItem.ItemId == Resource.Id.nav_logOff)
             {
+                SignViewModel.UserTemp.IsLogged = false;
+                Mvx.Resolve<IUserRepository>().Save(SignViewModel.UserTemp);
                 ViewModel.ShowLogView();
-            }
-            if (e.MenuItem.ItemId == Resource.Id.nav_about)
-            {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-                alertDialog.SetTitle("About");
-                alertDialog.SetMessage("this app tasky ver. 2.0");
-                alertDialog.SetNeutralButton("Ok", delegate { alertDialog.Dispose(); });
-                alertDialog.Show();
             }
             drawerLayout.CloseDrawers();
         }
 
-        void SwipeContainer_Refresh(object sender, EventArgs e)
+        async void SwipeContainer_Refresh(object sender, EventArgs e)
         {
             //for test...
+            await Task.Delay(3000);
             ViewModel.ShowSelf();
             (sender as SwipeRefreshLayout).Refreshing = false;
         }

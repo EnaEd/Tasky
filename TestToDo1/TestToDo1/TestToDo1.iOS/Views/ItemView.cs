@@ -6,6 +6,10 @@ using TestToDo1.Core.ViewModels;
 using MvvmCross.iOS.Support.SidePanels;
 using Cirrious.FluentLayouts.Touch;
 using AddressBookUI;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using CoreAnimation;
 
 namespace TestToDo1.iOS.Views
 {
@@ -17,13 +21,15 @@ namespace TestToDo1.iOS.Views
         private UIButton _buttonDelete;
         private UIButton _buttonCall;
         private UILabel _labelTaskName;
+        private UILabel _labelError;
         private UITextField _textEdit;
         private UITextField _textContactName;
         private UITextField _textContactPhone;
         private UISwitch _swith;
-        private UILabel _labelPeopleContact;
         private UIButton _buttonSelectContact;
         private ABPeoplePickerNavigationController _peopleConroller;
+        private UIScrollView _scrollView;
+        private UIView _contentConteiner;
 
         public ItemView()
         {
@@ -33,35 +39,69 @@ namespace TestToDo1.iOS.Views
             base.ViewDidLoad();
             View.BackgroundColor = UIColor.White;
 
+            var border = new CALayer();
+            nfloat width = 2;
+            border.BorderColor = UIColor.Black.CGColor;
+            border.BorderWidth = width;
+
             ViewModel.Show();
+
+            _contentConteiner = new UIView();
+            _scrollView = new UIScrollView();
+            _scrollView.AddSubview(_contentConteiner);
+            Add(_scrollView);
 
             var _BackBarButton = new UIBarButtonItem();
             _BackBarButton.Title = "Back";
-            NavigationItem.RightBarButtonItem = _BackBarButton;
+            NavigationItem.LeftBarButtonItem = _BackBarButton;
 
             _peopleConroller = new ABPeoplePickerNavigationController();
             _peopleConroller.SelectPerson2 += SelectPeople;
-            _peopleConroller.Cancelled += delegate {
+            _peopleConroller.Cancelled += delegate
+            {
                 this.DismissModalViewController(true);
             };
 
             _labelTaskName = new UILabel();
-            Add(_labelTaskName);
+            _contentConteiner.AddSubview(_labelTaskName);
+
+
+            _labelError = new UILabel();
+            _labelError.Font = _labelError.Font.WithSize(10);
+            _labelError.TextColor = UIColor.Red;
+            _contentConteiner.AddSubview(_labelError);
 
             _textEdit = new UITextField();
             _textEdit.Placeholder = "todo...";
-            Add(_textEdit);
+            _textEdit.BorderStyle = UITextBorderStyle.RoundedRect;
+            _textEdit.ShouldReturn = (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            _contentConteiner.AddSubview(_textEdit);
 
             _textContactName = new UITextField();
             _textContactName.Placeholder = "add contact...";
-            Add(_textContactName);
+            _textContactName.BorderStyle = UITextBorderStyle.RoundedRect;
+            _textContactName.ShouldReturn = (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            _contentConteiner.AddSubview(_textContactName);
 
             _textContactPhone = new UITextField();
             _textContactPhone.Placeholder = "add Phone...";
-            Add(_textContactPhone);
-
-            _labelPeopleContact = new UILabel();
-            Add(_labelPeopleContact);
+            _textContactPhone.KeyboardType = UIKeyboardType.NamePhonePad;
+            _textContactPhone.ReturnKeyType = UIReturnKeyType.Done;
+            _textContactPhone.BorderStyle = UITextBorderStyle.RoundedRect;
+            _textContactPhone.ShouldReturn = (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
+            _contentConteiner.AddSubview(_textContactPhone);
 
             _buttonSelectContact = new UIButton();
             _buttonSelectContact.BackgroundColor = UIColor.Blue;
@@ -69,25 +109,25 @@ namespace TestToDo1.iOS.Views
             _buttonSelectContact.Layer.CornerRadius = 5;
             _buttonSelectContact.Layer.BorderWidth = 1;
             _buttonSelectContact.TouchUpInside += delegate { PresentModalViewController(_peopleConroller, true); };
-            Add(_buttonSelectContact);
+            _contentConteiner.AddSubview(_buttonSelectContact);
 
             _buttonCall = new UIButton();
             _buttonCall.BackgroundColor = UIColor.Blue;
             _buttonCall.SetTitle("Call", UIControlState.Normal);
             _buttonCall.Layer.CornerRadius = 5;
             _buttonCall.Layer.BorderWidth = 1;
-            Add(_buttonCall);
+            _contentConteiner.AddSubview(_buttonCall);
 
             _swith = new UISwitch();
             _swith.On = true;
-            Add(_swith);
+            _contentConteiner.AddSubview(_swith);
 
             _buttonSave = new UIButton(UIButtonType.Custom);
             _buttonSave.BackgroundColor = UIColor.Blue;
             _buttonSave.Layer.CornerRadius = 5;
             _buttonSave.Layer.BorderWidth = 1;
             _buttonSave.SetTitle("Save", UIControlState.Normal);
-            Add(_buttonSave);
+            _contentConteiner.AddSubview(_buttonSave);
 
             _buttonDelete = new UIButton(UIButtonType.Custom);
             _buttonDelete.Layer.CornerRadius = 5;
@@ -95,7 +135,7 @@ namespace TestToDo1.iOS.Views
             _buttonDelete.BackgroundColor = UIColor.Blue;
             _buttonDelete.SetTitle("Delete", UIControlState.Normal);
             _buttonDelete.TitleColor(UIControlState.Selected);
-            Add(_buttonDelete);
+            _contentConteiner.AddSubview(_buttonDelete);
 
             var set = this.CreateBindingSet<ItemView, ItemViewModel>();
             set.Bind(_BackBarButton).To(vm => vm.BackToCommand);
@@ -107,59 +147,92 @@ namespace TestToDo1.iOS.Views
             set.Bind(_textContactName).To(vm => vm.ContactName);
             set.Bind(_textContactPhone).To(vm => vm.ContactPhone);
             set.Bind(_buttonCall).To(vm => vm.PhoneCallCommand);
+            set.Bind(_labelError).To(vm => vm.Error);
             set.Apply();
 
             //conastraint
+            _scrollView.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+            _scrollView.AddConstraints(_contentConteiner.FullWidthOf(_scrollView));
+            _scrollView.AddConstraints(_contentConteiner.FullHeightOf(_scrollView));
+
             View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
+            View.AddConstraints(_scrollView.FullWidthOf(View));
+            View.AddConstraints(_scrollView.FullHeightOf(View));
             View.AddConstraints(
+                _contentConteiner.WithSameWidth(View),
+                _contentConteiner.WithSameHeight(View).SetPriority(UILayoutPriority.DefaultLow)
+            );
 
-                 _labelTaskName.WithSameCenterX(View),
-                 _labelTaskName.WithSameTop(View).Plus(100),
-                 _labelTaskName.Width().EqualTo(View.Frame.Width).Minus(130),
-                 _labelTaskName.Height().EqualTo(80),
+            _contentConteiner.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
-                 _textEdit.WithSameCenterX(_labelTaskName),
-                 _textEdit.Below(_labelTaskName,20),
-                 _textEdit.Width().EqualTo(View.Frame.Width).Minus(130),
-                 _textEdit.Height().EqualTo(60),
+            _contentConteiner.AddConstraints(
 
-                 _textContactName.WithSameCenterX(_textEdit),
-                 _textContactName.Below(_textEdit,20),
-                 _textContactName.Width().EqualTo(View.Frame.Width).Minus(130),
+                 _labelError.AtTopOf(_contentConteiner),
+                 _labelError.WithSameWidth(_contentConteiner),
+                 _labelError.WithSameCenterX(_contentConteiner),
+                 _labelError.Height().EqualTo(20),
+
+                 _labelTaskName.WithSameCenterX(_contentConteiner),
+                 _labelTaskName.Below(_labelError, 25),
+                 _labelTaskName.WithSameWidth(_contentConteiner).Minus(130),
+                 _labelTaskName.Height().LessThanOrEqualTo(60),
+
+                 _textEdit.WithSameCenterX(_contentConteiner),
+                 _textEdit.Below(_labelTaskName, 20),
+                 _textEdit.WithSameWidth(_contentConteiner).Minus(25),
+                 _textEdit.Height().LessThanOrEqualTo(60),
+
+                 _textContactName.AtLeftOf(_contentConteiner, 25),
+                 _textContactName.Below(_textEdit, 20),
+                 _textContactName.WithSameWidth(_contentConteiner).Minus(130),
                  _textContactName.Height().EqualTo(40),
 
-                 _textContactPhone.WithSameCenterX(_textContactName),
+                 _textContactPhone.AtLeftOf(_contentConteiner, 25),
                  _textContactPhone.Below(_textContactName, 20),
-                 _textContactPhone.Width().EqualTo(View.Frame.Width).Minus(130),
+                 _textContactPhone.WithSameWidth(_contentConteiner).Minus(130),
                  _textContactPhone.Height().EqualTo(40),
 
-                 _buttonSelectContact.WithSameRight(View).Minus(20),
-                 _buttonSelectContact.Below(_textEdit, 20),
+                 _buttonSelectContact.ToRightOf(_textContactName, 20),
+                 _buttonSelectContact.WithSameCenterY(_textContactName),
                  _buttonSelectContact.Width().EqualTo(80),
 
-                 _swith.WithSameLeft(View).Plus(20),
+                 _swith.AtLeftOf(_contentConteiner, 25),
                  _swith.Below(_textContactPhone, 20),
 
-                 _buttonCall.Below(_buttonSelectContact, 20),
-                 _buttonCall.WithSameRight(View).Minus(20),
+                 _buttonCall.WithSameCenterY(_textContactPhone),
+                 _buttonCall.ToRightOf(_textContactPhone, 20),
                  _buttonCall.Width().EqualTo(80),
 
-                 _buttonSave.WithSameLeft(View).Plus(20),
-                 _buttonSave.Below(_swith,40),
+                 _buttonSave.AtLeftOf(_contentConteiner, 25),
+                 _buttonSave.Below(_swith, 40),
                  _buttonSave.Width().EqualTo(80),
+                 _buttonSave.Height().LessThanOrEqualTo(35),
 
-                 _buttonDelete.WithSameRight(View).Minus(20),
+                 _buttonDelete.WithSameCenterX(_buttonCall),
                  _buttonDelete.Below(_swith, 40),
-                 _buttonDelete.Width().EqualTo(80)
+                 _buttonDelete.Width().EqualTo(80),
+                 _buttonDelete.Height().LessThanOrEqualTo(35)
 
                 );
+            // very important to make scrolling work
+            var bottomViewConstraint = _contentConteiner.Subviews.Last()
+               .AtBottomOf(_contentConteiner).Minus(20);
+            _contentConteiner.AddConstraints(bottomViewConstraint);
         }
 
         private void SelectPeople(object sender, ABPeoplePickerSelectPerson2EventArgs e)
         {
             ViewModel.ContactName = $"{e.Person.LastName} {e.Person.FirstName}";
-            ViewModel.ContactPhone = (e.Person.GetPhones()).ToString();
+            var listPhone = e.Person.GetPhones();
+            //any method
+            if (listPhone.Count > 0)
+            {
+                string phoneResult = Convert.ToString(listPhone.FirstOrDefault().Value);
+                phoneResult = phoneResult.Replace(" ", "");
+
+                ViewModel.ContactPhone = phoneResult;
+            }
             this.DismissModalViewController(true);
         }
     }

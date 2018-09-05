@@ -9,6 +9,7 @@ namespace TestToDo1.Core.ViewModels
 {
     public class SignViewModel : MvxViewModel
     {
+        private readonly IUserRepository _userRepository;
         private List<User> _users;
         public List<User> Users
         {
@@ -43,7 +44,7 @@ namespace TestToDo1.Core.ViewModels
                 RaisePropertyChanged(() => UserPassword);
             }
         }
-        
+
         private string _error;
         public string Error
         {
@@ -58,9 +59,11 @@ namespace TestToDo1.Core.ViewModels
             }
         }
 
-        public SignViewModel()
+        public SignViewModel(IUserRepository userRepository)
         {
             Error = string.Empty;
+            _userRepository = userRepository;
+            UserTemp = new User();
         }
 
         private MvxCommand _signCommand;
@@ -73,29 +76,26 @@ namespace TestToDo1.Core.ViewModels
         }
         private void DoSign()
         {
-            if (!string.IsNullOrEmpty(UserLogin) && !string.IsNullOrEmpty(UserPassword))
+            if (string.IsNullOrEmpty(UserLogin) || string.IsNullOrEmpty(UserPassword))
             {
-                UserTemp = new User();
-                UserTemp.UserLogin = this.UserLogin;
-                UserTemp.UserPassword = this.UserPassword;
-                if (Mvx.Resolve<IUserRepository>().GetUserByData(UserLogin)is User)
-                {
-                    UserTemp = Mvx.Resolve<IUserRepository>().GetUserByData(UserLogin);
-
-                    if (!UserPassword.Equals(UserTemp.UserPassword))
-                    {
-                        Error = "Wrong password";
-                        UserPassword = string.Empty;
-                        return;
-                    }
-                    ShowViewModel<MainViewModel>();
-                    return;
-                }
-
-                    Error = "UserLogin not exists";
-                    UserPassword = string.Empty;
+                Error = "Fields Login and Password must have a value";
+                return;
             }
-            Error = "Fields Login and Password must have a value";
+            UserTemp.UserLogin = this.UserLogin;
+            UserTemp.UserPassword = this.UserPassword;
+            User tempUser = _userRepository.GetUserByData(UserLogin,UserPassword);
+
+            if (tempUser is User)
+            {
+                UserTemp = tempUser;
+                UserTemp.IsLogged = true;
+                _userRepository.Save(UserTemp);
+                ShowViewModel<MainViewModel>();
+                return;
+            }
+            Error = "Wrong password or login";
+            UserLogin = string.Empty;
+            UserPassword = string.Empty;
         }
 
         private MvxCommand _backToCommand;

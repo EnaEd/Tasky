@@ -24,17 +24,18 @@ namespace TestToDo1.iOS.Views
         }
         public override void ViewDidLoad()
         {
-            View = new UIView() { BackgroundColor=UIColor.LightGray};
+            View = new UIView() { BackgroundColor=UIColor.White};
 
             base.ViewDidLoad();
 
             ViewModel.Show();
 
             var _addBarButton = new UIBarButtonItem(UIBarButtonSystemItem.Add);
-            _addBarButton.Title = "";
+            _addBarButton.Title = string.Empty;
             NavigationItem.RightBarButtonItem = _addBarButton;
 
             _table = new UITableView();
+            _table.RowHeight = 60;
             RefreshAsync();
             AddRefreshControl();
             _table.AddSubview(_refresh);
@@ -57,7 +58,7 @@ namespace TestToDo1.iOS.Views
             _table.ReloadData();
 
             View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
-            View.AddConstraints(_table.FullWidthOf(View,5));
+            View.AddConstraints(_table.FullWidthOf(View));
             View.AddConstraints(_table.FullHeightOf(View));
         }
 

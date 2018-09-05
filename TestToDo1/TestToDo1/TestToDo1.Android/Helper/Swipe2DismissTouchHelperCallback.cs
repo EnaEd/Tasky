@@ -19,7 +19,7 @@ namespace TestToDo1.Droid.Helper
         {
         }
 
-        public Swipe2DismissTouchHelperCallback(Context context) : base(0,ItemTouchHelper.Left)
+        public Swipe2DismissTouchHelperCallback(Context context) : base(0, ItemTouchHelper.Left)
         {
             _context = context;
         }
@@ -36,13 +36,14 @@ namespace TestToDo1.Droid.Helper
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(_context);
             alertDialog.SetTitle("Delete task");
             alertDialog.SetMessage("do you really want to delete this task");
-                                                            //without create new ViewModel
-            alertDialog.SetPositiveButton("Yes", delegate { Mvx.Resolve<IItemRepository>().Delete(item.Id);
-                                                            alertDialog.Dispose();
-                                                          });
-            alertDialog.SetNegativeButton("No", delegate {alertDialog.Dispose();});
+            //without create new ViewModel
+            alertDialog.SetPositiveButton("Yes", delegate {
+                Mvx.Resolve<IItemRepository>().Delete(item.Id);
+                alertDialog.Dispose();
+            });
+            alertDialog.SetNegativeButton("No", delegate { alertDialog.Dispose(); });
             alertDialog.Show();
-            
+
         }
     }
 }

@@ -19,6 +19,9 @@ namespace TestToDo1.Core.ViewModels
         public byte[] UserImage { get; set; }
         public string UserLogin { get; set; }
 
+        private int _maxPixel;
+        private int _qualityPercent;
+
         #region for observableCollection using
         //private List<Item> _tempListItems;
         //public List<Item> TempListItems
@@ -50,7 +53,6 @@ namespace TestToDo1.Core.ViewModels
             }
         }
 
-
         public MainViewModel(IMvxPictureChooserTask pictureChooserTask, IItemRepository iitemRepository,IItemRepository itemRepository)
         {
             //for observableCollection using
@@ -58,8 +60,8 @@ namespace TestToDo1.Core.ViewModels
 
             _itemRepository = itemRepository;
             _pictureChooserTask = pictureChooserTask;
-            maxPixel = 400;
-            qualityPercent = 90;
+            _maxPixel = 400;
+            _qualityPercent = 90;
 
             //for SQLite using
             TempListItemsSQL = new List<Item>(_itemRepository.Get(SignViewModel.UserTemp.Id));
@@ -68,8 +70,6 @@ namespace TestToDo1.Core.ViewModels
             UserImage = SignViewModel.UserTemp.UserImage;
             UserLogin = SignViewModel.UserTemp.UserLogin;
         }
-
-        public MainViewModel() { }
 
         private MvxCommand _goToItem;
         public ICommand GoToItem
@@ -120,13 +120,10 @@ namespace TestToDo1.Core.ViewModels
             }
         }
 
-        private int maxPixel;
-        private int qualityPercent;
-
         //public for change in navigation menu
         public void AddPicture()
         {
-            _pictureChooserTask.ChoosePictureFromLibrary(maxPixel, qualityPercent, OnPicture, () => { });
+            _pictureChooserTask.ChoosePictureFromLibrary(_maxPixel, _qualityPercent, OnPicture, () => { });
         }
 
         private void OnPicture(Stream stream)
@@ -156,6 +153,19 @@ namespace TestToDo1.Core.ViewModels
             ShowViewModel<LeftPanelViewModel>();
         }
 
+        private MvxCommand _backToCommand;
+        public ICommand BackToCommand
+        {
+            get
+            {
+                _backToCommand = _backToCommand ?? new MvxCommand(GoBack);
+                return _backToCommand;
+            }
+        }
+        private void GoBack()
+        {
+            ShowViewModel<SignViewModel>();
+        }
 
         //for swipe delete iOS
         private MvxCommand<int> _removeCommand;
@@ -164,9 +174,8 @@ namespace TestToDo1.Core.ViewModels
             get => _removeCommand ?? (_removeCommand = new MvxCommand<int>(i =>
             {
                 //try in iPhone....
-                //TempListItemsSQL.RemoveAt(i);
                 _itemRepository.Delete(TempListItemsSQL[i].Id);
-
+                ShowViewModel<MainViewModel>();
             }));
         }
     }
