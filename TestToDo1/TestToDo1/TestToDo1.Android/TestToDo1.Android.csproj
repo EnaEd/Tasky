@@ -253,6 +253,9 @@
     <AndroidResource Include="Resources\drawable\todo.png" />
     <AndroidResource Include="Resources\drawable\addAndroidBlack.png" />
     <AndroidResource Include="Resources\drawable\backAndroidBlack.png" />
+    <AndroidResource Include="Resources\drawable\todolist.png" />
+    <AndroidResource Include="Resources\drawable\buttonBackground.xml" />
+    <AndroidResource Include="Resources\drawable\textViewBackground.xml" />
     <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />

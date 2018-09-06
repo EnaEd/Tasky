@@ -3,7 +3,8 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+	android:background="#ccf2ff">
     <Toolbar
         android:id="@+id/_toolbarLogIn"
         android:layout_width="match_parent"
@@ -40,7 +41,7 @@
             local:MvxBind="Bitmap UserImage,Converter=ByteToBitmap;Click AddPictureCommand" />
 		</RelativeLayout>
             <EditText
-                android:textAppearance="?android:attr/textAppearanceMedium"
+				android:background="@drawable/textviewbackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -49,21 +50,23 @@
                 android:hint="Login..."
                 local:MvxBind="Text UserLogin" />
             <EditText
-                android:textAppearance="?android:attr/textAppearanceMedium"
+				android:background="@drawable/textviewbackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
+				android:layout_marginTop="15dp"
                 android:id="@+id/textViewUserPassword"
                 android:hint="Password..."
                 android:inputType="textPassword"
                 local:MvxBind="Text UserPassword" />
 	 <EditText
-                android:textAppearance="?android:attr/textAppearanceMedium"
+				android:background="@drawable/textviewbackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
+				android:layout_marginTop="15dp"
                 android:id="@+id/textViewUserPassword"
                 android:hint="Password repeat..."
                 android:inputType="textPassword"
@@ -73,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="27dp"
         android:layout_marginRight="25dp"
+		android:layout_marginTop="15dp"
 		android:layout_gravity="center"
 		android:text="Password must contain at least 6 characters, min 1 letter UpperCase,min 1 digit"
 	/>
@@ -83,7 +87,8 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
                 android:id="@+id/buttonNewUser"
-                android:background="@android:color/holo_green_dark"
+                android:textColor="#ffffff"
+				android:background="@drawable/buttonbackground"
                 android:layout_marginTop="10dp"
                 local:MvxBind="Click CreateUserCommand" />
 </LinearLayout>

@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-	>
+	android:background="#ccf2ff">
 		<Toolbar
 			android:id="@+id/_toolbarLogIn"
 			android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                     android:textSize="30dp"
                     local:MvxBind="Text TaskName" />
                 <EditText
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:background="@drawable/textviewbackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
@@ -73,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 <EditText
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:background="@drawable/textviewbackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
@@ -84,7 +84,7 @@
                     android:id="@+id/textContactName"
 				    local:MvxBind="Text ContactName"/>
 					<EditText
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:background="@drawable/textviewbackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
@@ -97,7 +97,8 @@
                     android:id="@+id/textPhoneNumber"
 				    local:MvxBind="Text ContactPhone"/>
 				 <Button
-                        android:background="@android:color/holo_green_dark"
+                        android:textColor="#ffffff"
+				        android:background="@drawable/buttonbackground"
                         android:text="Add"
                         android:layout_width="85dp"
 						android:layout_marginTop="30dp"
@@ -106,7 +107,8 @@
                         android:layout_alignParentRight="true"
                         android:id="@+id/buttonAdd" />
 					<Button
-                        android:background="@android:color/holo_green_dark"
+                        android:textColor="#ffffff"
+						android:background="@drawable/buttonbackground"
                         android:text="Call"
                         android:layout_width="85dp"
 						android:layout_marginTop="70dp"
@@ -136,11 +138,13 @@
                         android:layout_width="85dp"
 						android:layout_marginLeft="10dp"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/holo_green_dark"
+                        android:textColor="#ffffff"
+						android:background="@drawable/buttonbackground"
                         local:MvxBind="Click SaveItem"
                         android:id="@+id/buttonSave" />
                     <Button
-                        android:background="@android:color/holo_green_dark"
+                        android:textColor="#ffffff"
+						android:background="@drawable/buttonbackground"
                         android:text="Delete"
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"

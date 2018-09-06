@@ -2350,10 +2350,13 @@ namespace TestToDo1.Droid
 			public const int baseline_home_white_18dp = 2130771972;
 			
 			// aapt resource value: 0x7F010005
-			public const int call = 2130771973;
+			public const int buttonBackground = 2130771973;
 			
 			// aapt resource value: 0x7F010006
-			public const int call128 = 2130771974;
+			public const int call = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int call128 = 2130771975;
 			
 			// aapt resource value: 0x7F020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -2373,23 +2376,23 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F02005A
 			public const int design_snackbar_background = 2130837594;
 			
-			// aapt resource value: 0x7F010012
-			public const int fab_shadow = 2130771986;
+			// aapt resource value: 0x7F010015
+			public const int fab_shadow = 2130771989;
 			
-			// aapt resource value: 0x7F010013
-			public const int fab_shadow_mini = 2130771987;
-			
-			// aapt resource value: 0x7F010007
-			public const int ic_home = 2130771975;
+			// aapt resource value: 0x7F010016
+			public const int fab_shadow_mini = 2130771990;
 			
 			// aapt resource value: 0x7F010008
-			public const int logoff = 2130771976;
+			public const int ic_home = 2130771976;
+			
+			// aapt resource value: 0x7F010009
+			public const int logoff = 2130771977;
 			
 			// aapt resource value: 0x7F02005B
 			public const int navigation_empty_icon = 2130837595;
 			
-			// aapt resource value: 0x7F010009
-			public const int NotePad = 2130771977;
+			// aapt resource value: 0x7F010010
+			public const int NotePad = 2130771984;
 			
 			// aapt resource value: 0x7F02005C
 			public const int notification_action_background = 2130837596;
@@ -2427,11 +2430,17 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F020065
 			public const int notify_panel_notification_icon_bg = 2130837605;
 			
-			// aapt resource value: 0x7F010010
-			public const int splash = 2130771984;
-			
 			// aapt resource value: 0x7F010011
-			public const int todo = 2130771985;
+			public const int splash = 2130771985;
+			
+			// aapt resource value: 0x7F010012
+			public const int textViewBackground = 2130771986;
+			
+			// aapt resource value: 0x7F010013
+			public const int todo = 2130771987;
+			
+			// aapt resource value: 0x7F010014
+			public const int todolist = 2130771988;
 			
 			static Drawable()
 			{
