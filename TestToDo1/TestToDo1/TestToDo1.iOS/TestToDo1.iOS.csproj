@@ -184,6 +184,7 @@
     <Compile Include="Bootstrap\PictureChooserPluginBootstrap.cs" />
     <Compile Include="Converters\ByteToUIImageValueConverter.cs" />
     <Compile Include="DebugTrace.cs" />
+    <Compile Include="Helper\Cell.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />

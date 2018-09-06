@@ -225,8 +225,9 @@ namespace TestToDo1.iOS.Views
         {
             ViewModel.ContactName = $"{e.Person.LastName} {e.Person.FirstName}";
             var listPhone = e.Person.GetPhones();
-            //any method
-            if (listPhone.Count > 0)
+            
+            bool result = listPhone.Any();
+            if (result)
             {
                 string phoneResult = Convert.ToString(listPhone.FirstOrDefault().Value);
                 phoneResult = phoneResult.Replace(" ", "");

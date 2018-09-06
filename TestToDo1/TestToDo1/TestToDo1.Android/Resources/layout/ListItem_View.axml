@@ -18,5 +18,15 @@
             android:textStyle="bold"
             android:textColor="@android:color/black"
             local:MvxBind="Text TaskName" />
+		<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+			android:layout_marginLeft="100dp"
+            android:background="@android:color/white"
+            android:textSize="15dp"
+            android:text="Name"
+            android:textStyle="normal"
+            android:textColor="@android:color/black"
+            local:MvxBind="Text ContactPhone" />
     </LinearLayout>
 </LinearLayout>
