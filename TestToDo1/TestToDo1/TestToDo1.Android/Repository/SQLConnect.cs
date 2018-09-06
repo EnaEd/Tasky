@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using SQLite;
 using TestToDo1.Core.Models;
-using TestToDo1.Core.IRepository;
 
 namespace TestToDo1.Droid.Services
 {

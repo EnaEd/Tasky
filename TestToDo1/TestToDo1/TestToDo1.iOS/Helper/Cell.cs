@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-
 using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
@@ -15,10 +11,8 @@ namespace TestToDo1.iOS.Helper
     [Register("Cell")]
     class Cell: MvxTableViewCell
     {
-
         private UILabel _taskName;
         private UILabel _contactPhone;
-        
 
         public Cell()
         {
@@ -26,8 +20,7 @@ namespace TestToDo1.iOS.Helper
             InitializeBindings();
         }
 
-        public Cell(IntPtr handle)
-            : base(handle)
+        public Cell(IntPtr handle) : base(handle)
         {
             CreateLayout();
             InitializeBindings();
@@ -37,10 +30,13 @@ namespace TestToDo1.iOS.Helper
         {
             const int offsetStart = 10;
             Accessory = UITableViewCellAccessory.DisclosureIndicator;
+
             _taskName = new UILabel(new RectangleF(offsetStart, 0, 75, 40));
+
             _contactPhone = new UILabel(new RectangleF(76, 0, 200, 40));
             _contactPhone.TextAlignment = UITextAlignment.Right;
             _contactPhone.Font = _contactPhone.Font.WithSize(15);
+
             ContentView.AddSubviews(_taskName,_contactPhone);
         }
 

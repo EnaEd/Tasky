@@ -1,8 +1,4 @@
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Platform.IoC;
-using TestToDo1.Core.IRepository;
-using TestToDo1.Core.Models;
 using TestToDo1.Core.ViewModels;
 
 

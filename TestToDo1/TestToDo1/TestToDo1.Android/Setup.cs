@@ -23,15 +23,15 @@ namespace TestToDo1.Droid
             Mvx.RegisterSingleton<IItemRepository>(() => new ItemRepository());
 
             string filePath = Path.Combine(System.Environment.GetFolderPath(
-                                           System.Environment.SpecialFolder.Personal), "User.txt");
+                                           System.Environment.SpecialFolder.Personal), "ToDoUser.txt");
             if (File.Exists(filePath))
             {
                 string user = File.ReadAllText(Path.Combine(System.Environment.GetFolderPath(
-                                           System.Environment.SpecialFolder.Personal), "User.txt"));
+                                           System.Environment.SpecialFolder.Personal), "ToDoUser.txt"));
 
-                int flagStringSplitter = user.IndexOf('.');
-                string userLogin = user.Substring(0, flagStringSplitter);
-                string userPassword = user.Substring(++flagStringSplitter);
+                string[] tempUser = user.Split('`');
+                string userLogin = tempUser[0];
+                string userPassword = tempUser[1];
                 SignViewModel.UserCurrent = Mvx.Resolve<IUserRepository>().GetUserByData(userLogin, userPassword);
             }
             return new Core.App();

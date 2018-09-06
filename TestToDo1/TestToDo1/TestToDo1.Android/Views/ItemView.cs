@@ -15,8 +15,8 @@ namespace TestToDo1.Droid.Views
     {
         private Switch _switch;
         private Button _buttonAdd;
-        private NavigationView navigationView;
-        private DrawerLayout drawerLayout;
+        private NavigationView _navigationView;
+        private DrawerLayout _drawerLayout;
         private string _filePath;
 
         protected override void OnCreate(Bundle bundle)
@@ -27,16 +27,16 @@ namespace TestToDo1.Droid.Views
 
             //save user
             _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "ToDoUser.txt");
-            File.WriteAllText(_filePath, $"{SignViewModel.UserCurrent.UserLogin}." +
+            File.WriteAllText(_filePath, $"{SignViewModel.UserCurrent.UserLogin}`" +
                                         $"{SignViewModel.UserCurrent.UserPassword}");
 
-            drawerLayout = FindViewById<DrawerLayout>(Resource.Id._drawerItemView);
+            _drawerLayout = FindViewById<DrawerLayout>(Resource.Id._drawerItemView);
 
-            navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            navigationView.NavigationItemSelected += NavigationViewClick;
+            _navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            _navigationView.NavigationItemSelected += NavigationViewClick;
 
             //navigationHeader
-            var headerView = navigationView.GetHeaderView(0);
+            var headerView = _navigationView.GetHeaderView(0);
             headerView.Click += AddPhoto;
 
             _buttonAdd = FindViewById<Button>(Resource.Id.buttonAdd);
@@ -66,7 +66,7 @@ namespace TestToDo1.Droid.Views
                 File.Delete(_filePath);
                 ViewModel.ShowLogView();
             }
-            drawerLayout.CloseDrawers();
+            _drawerLayout.CloseDrawers();
         }
 
         //hardware event back

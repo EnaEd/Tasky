@@ -16,11 +16,11 @@ namespace TestToDo1.Droid.Views
     [Activity(Label = "ListItems" , Theme = "@style/MyTheme")]
     public class MainView : MvxActivity<MainViewModel>
     {
-        private SwipeRefreshLayout swipeContainer;
-        private NavigationView navigationView;
-        private DrawerLayout drawerLayout;
-        private MvxRecyclerView recyclerView;
-        private ItemTouchHelper itemTouchHelper;
+        private SwipeRefreshLayout _swipeContainer;
+        private NavigationView _navigationView;
+        private DrawerLayout _drawerLayout;
+        private MvxRecyclerView _recyclerView;
+        private ItemTouchHelper _itemTouchHelper;
         private string _filePath;
 
         protected override void OnCreate(Bundle bundle)
@@ -31,25 +31,25 @@ namespace TestToDo1.Droid.Views
 
             //save user
             _filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),"ToDoUser.txt");
-            File.WriteAllText(_filePath,$"{SignViewModel.UserCurrent.UserLogin}." +
+            File.WriteAllText(_filePath,$"{SignViewModel.UserCurrent.UserLogin}`" +
                                         $"{SignViewModel.UserCurrent.UserPassword}");
 
-            recyclerView = FindViewById<MvxRecyclerView>(Resource.Id.taskList);
-            itemTouchHelper = new ItemTouchHelper(new Swipe2DismissTouchHelperCallback(this));
-            itemTouchHelper.AttachToRecyclerView(recyclerView);
+            _recyclerView = FindViewById<MvxRecyclerView>(Resource.Id.taskList);
+            _itemTouchHelper = new ItemTouchHelper(new Swipe2DismissTouchHelperCallback(this));
+            _itemTouchHelper.AttachToRecyclerView(_recyclerView);
 
-            drawerLayout = FindViewById<DrawerLayout>(Resource.Id._drawerMain);
+            _drawerLayout = FindViewById<DrawerLayout>(Resource.Id._drawerMain);
 
-            navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            navigationView.NavigationItemSelected += NavigationViewClick;
+            _navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            _navigationView.NavigationItemSelected += NavigationViewClick;
 
             //navigationHeader
-            var headerView = navigationView.GetHeaderView(0);
+            var headerView = _navigationView.GetHeaderView(0);
             headerView.Click += AddPhoto;
 
-            swipeContainer = FindViewById<SwipeRefreshLayout>(Resource.Id.swipeContainer1);
-            swipeContainer.SetColorSchemeResources(Android.Resource.Color.HoloBlueLight, Android.Resource.Color.HoloGreenLight, Android.Resource.Color.HoloOrangeLight, Android.Resource.Color.HoloRedLight);
-            swipeContainer.Refresh += SwipeContainer_Refresh;
+            _swipeContainer = FindViewById<SwipeRefreshLayout>(Resource.Id.swipeContainer1);
+            _swipeContainer.SetColorSchemeResources(Android.Resource.Color.HoloBlueLight, Android.Resource.Color.HoloGreenLight, Android.Resource.Color.HoloOrangeLight, Android.Resource.Color.HoloRedLight);
+            _swipeContainer.Refresh += SwipeContainer_Refresh;
         }
 
         private void AddPhoto(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace TestToDo1.Droid.Views
                 File.Delete(_filePath);
                 ViewModel.ShowLogView();
             }
-            drawerLayout.CloseDrawers();
+            _drawerLayout.CloseDrawers();
         }
 
         async void SwipeContainer_Refresh(object sender, EventArgs e)

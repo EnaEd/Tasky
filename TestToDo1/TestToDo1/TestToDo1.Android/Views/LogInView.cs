@@ -1,8 +1,5 @@
 using Android.App;
 using Android.OS;
-using Android.Widget;
-using Android.Content;
-using Android.Runtime;
 using MvvmCross.Droid.Views;
 
 namespace TestToDo1.Droid.Views

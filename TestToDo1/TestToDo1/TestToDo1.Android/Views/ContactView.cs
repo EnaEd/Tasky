@@ -8,7 +8,6 @@ using MvvmCross.Droid.Views;
 using TestToDo1.Core.Models;
 using TestToDo1.Core.ViewModels;
 
-
 namespace TestToDo1.Droid.Views
 {
     [Activity(Label = "Contact", Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
