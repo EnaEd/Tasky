@@ -3,6 +3,7 @@ using System.Windows.Input;
 using TestToDo1.Core.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace TestToDo1.Core.ViewModels
 {
@@ -25,24 +26,22 @@ namespace TestToDo1.Core.ViewModels
                 _searchPattern = value;
                 if (string.IsNullOrEmpty(value))
                 {
-                    _filteredList = Contacts;
+                    _filteredList = Contacts.OrderBy(c => c.ContactName).ToList();
                 }
-                else
-                { 
-                    _filteredList = Contacts.Where(o => o.ContactName.ToLower().Contains(value)).ToList();
+                if(!string.IsNullOrEmpty(value))
+                {
+                    _filteredList = Contacts.Where(c => c.ContactName.StartsWith(value, StringComparison.OrdinalIgnoreCase)).ToList();
                 }
                 RaisePropertyChanged(() => SearchPattern);
                 RaisePropertyChanged(() => FilteredList);
             }
         }
 
-
         public ContactViewModel()
         {
             Contacts = new List<Contact>();
             _filteredList = new List<Contact>();
             Contacts = FilteredList;
-            
         }
         public void Init(Item item)
         {

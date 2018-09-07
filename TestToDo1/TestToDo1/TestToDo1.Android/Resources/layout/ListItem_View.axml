@@ -3,30 +3,36 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-			android:layout_marginLeft="15dp"
-            android:background="@android:color/white"
-            android:textSize="35dp"
-            android:text="Name"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            local:MvxBind="Text TaskName" />
+    android:layout_height="wrap_content"
+	>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:background="@drawable/rowBackground">
 		<TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="15dp"
+			android:layout_gravity="center"
+			android:background="@android:color/white"
+			android:textSize="25dp"
+			android:text="Name"
+			android:textStyle="bold"
+			android:textColor="@android:color/black"
+			local:MvxBind="Text TaskName"
+			android:id="@+id/textView1"
+			android:layout_marginTop="0.0dp" />
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:layout_marginLeft="100dp"
-            android:background="@android:color/white"
-            android:textSize="15dp"
-            android:text="Name"
-            android:textStyle="normal"
-            android:textColor="@android:color/black"
-            local:MvxBind="Text ContactPhone" />
-    </LinearLayout>
+			android:background="@android:color/white"
+			android:textSize="15dp"
+			android:layout_gravity="center"
+			android:text="Name"
+			android:textStyle="normal"
+			android:textColor="@android:color/black"
+			local:MvxBind="Text ContactPhone" />
+	</LinearLayout>
 </LinearLayout>

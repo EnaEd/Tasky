@@ -47,6 +47,29 @@ namespace TestToDo1.Droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::TestToDo1.Droid.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::TestToDo1.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::TestToDo1.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::MvvmCross.Droid.Support.Core.UI.Resource.String.library_name = global::TestToDo1.Droid.Resource.String.library_name;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Attribute.MvxBind = global::TestToDo1.Droid.Resource.Attribute.MvxBind;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Attribute.MvxDropDownItemTemplate = global::TestToDo1.Droid.Resource.Attribute.MvxDropDownItemTemplate;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Attribute.MvxGroupItemTemplate = global::TestToDo1.Droid.Resource.Attribute.MvxGroupItemTemplate;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Attribute.MvxItemTemplate = global::TestToDo1.Droid.Resource.Attribute.MvxItemTemplate;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Attribute.MvxLang = global::TestToDo1.Droid.Resource.Attribute.MvxLang;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Attribute.MvxSource = global::TestToDo1.Droid.Resource.Attribute.MvxSource;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Attribute.MvxTemplate = global::TestToDo1.Droid.Resource.Attribute.MvxTemplate;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Id.MvvmCrossTagId = global::TestToDo1.Droid.Resource.Id.MvvmCrossTagId;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Id.MvxBindingTagUnique = global::TestToDo1.Droid.Resource.Id.MvxBindingTagUnique;
+			global::MvvmCross.Droid.Support.Fragment.Resource.String.library_name = global::TestToDo1.Droid.Resource.String.library_name;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxBinding = global::TestToDo1.Droid.Resource.Styleable.MvxBinding;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxBinding_MvxBind = global::TestToDo1.Droid.Resource.Styleable.MvxBinding_MvxBind;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxBinding_MvxLang = global::TestToDo1.Droid.Resource.Styleable.MvxBinding_MvxLang;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxControl = global::TestToDo1.Droid.Resource.Styleable.MvxControl;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxControl_MvxTemplate = global::TestToDo1.Droid.Resource.Styleable.MvxControl_MvxTemplate;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxExpandableListView = global::TestToDo1.Droid.Resource.Styleable.MvxExpandableListView;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::TestToDo1.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxImageView = global::TestToDo1.Droid.Resource.Styleable.MvxImageView;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxImageView_MvxSource = global::TestToDo1.Droid.Resource.Styleable.MvxImageView_MvxSource;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxListView = global::TestToDo1.Droid.Resource.Styleable.MvxListView;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::TestToDo1.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
+			global::MvvmCross.Droid.Support.Fragment.Resource.Styleable.MvxListView_MvxItemTemplate = global::TestToDo1.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
 			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxBind = global::TestToDo1.Droid.Resource.Attribute.MvxBind;
 			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxDropDownItemTemplate = global::TestToDo1.Droid.Resource.Attribute.MvxDropDownItemTemplate;
 			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxGroupItemTemplate = global::TestToDo1.Droid.Resource.Attribute.MvxGroupItemTemplate;
@@ -2376,11 +2399,11 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F02005A
 			public const int design_snackbar_background = 2130837594;
 			
-			// aapt resource value: 0x7F010015
-			public const int fab_shadow = 2130771989;
-			
 			// aapt resource value: 0x7F010016
-			public const int fab_shadow_mini = 2130771990;
+			public const int fab_shadow = 2130771990;
+			
+			// aapt resource value: 0x7F010017
+			public const int fab_shadow_mini = 2130771991;
 			
 			// aapt resource value: 0x7F010008
 			public const int ic_home = 2130771976;
@@ -2431,16 +2454,19 @@ namespace TestToDo1.Droid
 			public const int notify_panel_notification_icon_bg = 2130837605;
 			
 			// aapt resource value: 0x7F010011
-			public const int splash = 2130771985;
+			public const int rowBackground = 2130771985;
 			
 			// aapt resource value: 0x7F010012
-			public const int textViewBackground = 2130771986;
+			public const int splash = 2130771986;
 			
 			// aapt resource value: 0x7F010013
-			public const int todo = 2130771987;
+			public const int textViewBackground = 2130771987;
 			
 			// aapt resource value: 0x7F010014
-			public const int todolist = 2130771988;
+			public const int todo = 2130771988;
+			
+			// aapt resource value: 0x7F010015
+			public const int todolist = 2130771989;
 			
 			static Drawable()
 			{
@@ -3414,6 +3440,9 @@ namespace TestToDo1.Droid
 			// aapt resource value: 0x7F060012
 			public const int abc_toolbar_collapse_description = 2131099666;
 			
+			// aapt resource value: 0x7F080004
+			public const int action_settings = 2131230724;
+			
 			// aapt resource value: 0x7F060021
 			public const int appbar_scrolling_view_behavior = 2131099681;
 			
@@ -3428,6 +3457,9 @@ namespace TestToDo1.Droid
 			
 			// aapt resource value: 0x7F080002
 			public const int hello = 2131230722;
+			
+			// aapt resource value: 0x7F080005
+			public const int library_name = 2131230725;
 			
 			// aapt resource value: 0x7F060024
 			public const int password_toggle_content_description = 2131099684;

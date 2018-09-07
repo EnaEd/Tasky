@@ -7,6 +7,8 @@ using MvvmCross.Droid.Views;
 using TestToDo1.Core.Models;
 using TestToDo1.Core.ViewModels;
 using Android.Provider;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace TestToDo1.Droid.Views
 {
@@ -40,13 +42,14 @@ namespace TestToDo1.Droid.Views
                                                               ContactsContract.Contacts.InterfaceConsts.DisplayName));
                     string contactPhone = cursorPhone.GetString(cursorPhone.GetColumnIndex(
                                                               ContactsContract.CommonDataKinds.Phone.Number));
-                    
+
                     Contact contact = new Contact();
                     contact.Id = contactId;
                     contact.ContactName = contactName;
                     contact.ContactPhone = contactPhone;
-                    
+
                     ViewModel.Contacts.Add(contact);
+                    
                 }
             }
         }

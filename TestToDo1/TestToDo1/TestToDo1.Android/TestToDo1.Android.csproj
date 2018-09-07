@@ -44,10 +44,10 @@
     </Reference>
     <Reference Include="Mono.Android.Export" />
     <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\MvvmCross.Binding.4.3.0\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
+      <HintPath>..\..\..\packages\MvvmCross.Binding.4.4.0\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\MvvmCross.Binding.4.3.0\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
+      <HintPath>..\..\..\packages\MvvmCross.Binding.4.4.0\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\MvvmCross.Core.4.4.0\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
@@ -56,13 +56,22 @@
       <HintPath>..\..\..\packages\MvvmCross.Core.4.4.0\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Droid.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\MvvmCross.Core.4.4.0\lib\MonoAndroid\MvvmCross.Droid.Shared.dll</HintPath>
+      <HintPath>..\..\..\packages\MvvmCross.Droid.Shared.4.4.0\lib\MonoAndroid\MvvmCross.Droid.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.Core.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MvvmCross.Droid.Support.Core.UI.4.4.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.Fragment, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MvvmCross.Droid.Support.Fragment.4.4.0\lib\MonoAndroid70\MvvmCross.Droid.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.V7.AppCompat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MvvmCross.Droid.Support.V7.AppCompat.4.4.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.AppCompat.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Droid.Support.V7.RecyclerView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\MvvmCross.Droid.Support.V7.RecyclerView.4.4.0\lib\MonoAndroid70\MvvmCross.Droid.Support.V7.RecyclerView.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\MvvmCross.Binding.4.3.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
+      <HintPath>..\..\..\packages\MvvmCross.Binding.4.4.0\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\MvvmCross.Platform.4.4.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
@@ -256,6 +265,7 @@
     <AndroidResource Include="Resources\drawable\todolist.png" />
     <AndroidResource Include="Resources\drawable\buttonBackground.xml" />
     <AndroidResource Include="Resources\drawable\textViewBackground.xml" />
+    <AndroidResource Include="Resources\drawable\rowBackground.xml" />
     <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
